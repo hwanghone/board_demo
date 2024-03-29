@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: demo1
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    username: devel
+    password: devele1comm
+    url: jdbc:mysql://211.48.64.194:3306/board
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+  security:
+    user:
+      name: root
+      password: root
+      roles: ADMIN
+
+server:
+  port: 3306
