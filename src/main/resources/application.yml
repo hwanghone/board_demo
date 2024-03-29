@@ -1,23 +1,39 @@
 spring:
-  application:
-    name: demo1
+  profiles:
+    group:
+      "dev": "dev"
+      "prod": "prod"
+    default: "local"
+  thymeleaf:
+    prefix: classpath:/templates/
+    cache: false
+    resources:
+      static-locations: classpath:/static/
+      cache-period: 0
+    suffix: .html
+---
+
+spring:
+  config:
+    activate:
+      on-profile: "local"
   datasource:
     driver-class-name: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://211.48.64.194:3306/vpn_branch_dev?serverTimeZone=Asia/Seoul&useUnicode=true&rewriteBatchedStatements=true&allowMultiQueries=true&zeroDateTimeBehavior=convertToNull
     username: devel
     password: devele1comm
-    url: jdbc:mysql://211.48.64.194:3306/board
-  jpa:
-    hibernate:
-      ddl-auto: update
-    properties:
-      hibernate:
-        show_sql: true
-        format_sql: true
-  security:
-    user:
-      name: root
-      password: root
-      roles: ADMIN
+#  jpa:
+#    hibernate:
+#      ddl-auto: none
+#    properties:
+#      hibernate:
+#        show_sql: true
+#        format_sql: true
+#  security:
+#    user:
+#      name: root
+#      password: root
+#      roles: ADMIN
 
 server:
   port: 3306

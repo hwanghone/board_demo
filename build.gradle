@@ -23,24 +23,45 @@ repositories {
 }
 
 dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter-security'
+    // 시큐리티 아직 할 때 아님 로그인 기능에서 사용됨 ( 보안 관련 )
+    //implementation 'org.springframework.boot:spring-boot-starter-security'
+
+    // 타임리프 html 하고 java(백) 을 이어주는 역할을 한다고 생각하면 된다.
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-web-services'
-    implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity6'
-    implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+    //implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity6'
 
-    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    // jpa를 넣으면 자동으로 제공해준다.
+    //implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+
+    // 마이바티스
+    implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.1'
+
+    // jpa
+    //implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 //    implementation 'org.springframework.security.oauth.boot:spring-security-oauth2-autoconfigure:2.6.3'
 //    implementation "org.springframework.security:spring-security-config:5.6.0"
+
+    // get set 자동으로 만들어주는거
     compileOnly 'org.projectlombok:lombok'
+    // 개발 도움주는 도구
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
-    runtimeOnly 'com.mysql:mysql-connector-j'
+
+    // 현재 쓰고 있는 데이터베이스 종류 : 마리아 DB
     runtimeOnly 'org.mariadb.jdbc:mariadb-java-client'
-    runtimeOnly 'com.h2database:h2'
-    runtimeOnly 'mysql:mysql-connector-java'
+
+    //runtimeOnly 'com.mysql:mysql-connector-j'
+    //runtimeOnly 'com.h2database:h2'
+    //runtimeOnly 'mysql:mysql-connector-java'
+
+    // 에러 나지말라고 lombok은 get set 자동으로 만들어준다
+    // tomcat 서버 올리기 위해 사용
     annotationProcessor 'org.projectlombok:lombok'
     providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
+
+    // 테스트 할 때 쓰는 용도
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.springframework.security:spring-security-test'
 }
