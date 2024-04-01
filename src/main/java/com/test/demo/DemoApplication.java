@@ -1,14 +1,14 @@
-package com.example.demo2;
+package com.test.demo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
 
 @SpringBootApplication(exclude={SecurityAutoConfiguration.class})
-public class Demo2Application {
+public class DemoApplication {
 
   public static void main(String[] args) {
-    SpringApplication.run(Demo2Application.class, args);
+    SpringApplication.run(DemoApplication.class, args);
   }
 
 }
