@@ -6,43 +6,41 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 @Slf4j
 @Controller
 @RequestMapping("board")
 public class BoardController {
 
-  //  페이지 나타내기
   @GetMapping("/firstpage")
   public String boardText(){
 
-    boardVoid();
+    /*    List<Integer> list = new ArrayList<>();
+         list.add(0);
+         list.add(1);
+         list.add(2);
+    */
+
+    //TODO: list를 100개를 담고 출력 하시오.
+
+    //
+
+    /*
+          Map<String, Integer> map = new HashMap<>();
+          map.put("key1", 1);
+          map.put("key2", 2);
+          map.put("key3", 3);
+    */
+
+    //TODO: Map을 100개를 담고 출력 하시오.
+
+    //
 
     return "/board";
   }
-
-  public void boardVoid(){
-    System.out.println("DB insert");
-  }
-
-
-  //  페이지 이동 및 값 출력
-  @GetMapping("/secondpage")
-  public ModelAndView boardText2(ModelAndView mav, @RequestParam String testText){
-    System.out.println("입력한 내용 :" + testText);
-    log.info("입력한 내용 :" + testText);
-    mav.setViewName("secondpage");
-
-    return mav;
-  }
-
-
-//  @PostMapping(value = "/secondpage")
-//  public ModelAndView boardText(ModelAndView mav, @RequestParam String testText){
-//    System.out.println("입력한 내용 :" + testText);
-//    mav.setViewName("secondpage");
-//    return mav;
-//  }
-
-
 
 }
