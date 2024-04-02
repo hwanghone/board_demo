@@ -14,11 +14,14 @@ public class BoardController {
   //  페이지 나타내기
   @GetMapping("/firstpage")
   public String boardText(){
+
+    boardVoid();
+
     return "/board";
   }
 
-  public void boarText(){
-
+  public void boardVoid(){
+    System.out.println("DB insert");
   }
 
 
@@ -32,13 +35,13 @@ public class BoardController {
     return mav;
   }
 
-  @RequestMapping(value = "/secondpage")
-  public String boardText3(HttpServletRequest request){
-    String text1 = request.getParameter("testText");
-    System.out.println("입력한 내용2 :" + text1);
 
-    return "/secondpage";
-  }
+//  @PostMapping(value = "/secondpage")
+//  public ModelAndView boardText(ModelAndView mav, @RequestParam String testText){
+//    System.out.println("입력한 내용 :" + testText);
+//    mav.setViewName("secondpage");
+//    return mav;
+//  }
 
 
 
