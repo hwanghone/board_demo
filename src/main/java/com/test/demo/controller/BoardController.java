@@ -15,24 +15,24 @@ public class BoardController {
 
   @GetMapping("/firstpage")
   public String boardText(){
+      List<> firstlist = new ArrayList<>();
 
-//        List<Integer> list = new ArrayList<>();
-//        list.add(0);
-//        list.add(1);
-//        list.add(2);
+
+      System.out.println(firstlist);
+
+      // [{str="문자",num=1, bool=true}, {str="문자",num=1, bool=true}]
 
       //TODO: list를 100개를 담고 출력 하시오.
-      List<Integer> list = new ArrayList<>();
-      for (int i = 0; i <= 100; i++){
-        list.add(i);
-      }
-
-      log.info("{}", list);
-
-
-
-
-
+//      List<Integer> list = new ArrayList<>();
+//      for (int i = 0; i <= 100; i++) {
+//        list.add(i);
+//      }
+//
+//      for (int i=0; i<list.size(); i++) {
+//          for (int j=0; i<list.size(); j++) {
+//              System.out.println(list.get(j));
+//          }
+//      }
 
 //      Map<String, Integer> map = new HashMap<>();
 //      map.put("key1", 1);
@@ -40,12 +40,12 @@ public class BoardController {
 //      map.put("key3", 3);
 
     //TODO: Map을 100개를 담고 출력 하시오.
-    Map<String, Integer> map = new LinkedHashMap<>();
-    for (int i = 0; i <= 100; i++ ){
-      map.put("key" + i, i);
-    }
-
-    log.info("{}", map);
+//    Map<String, Integer> map = new LinkedHashMap<>();
+//    for (int i = 0; i <= 100; i++ ){
+//      map.put("key" + i, i);
+//    }
+//
+//    log.info("{} map", map);
 
 
 
