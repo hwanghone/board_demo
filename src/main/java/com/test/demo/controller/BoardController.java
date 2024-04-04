@@ -1,5 +1,6 @@
 package com.test.demo.controller;
 
+import com.test.demo.dto.BoardDto;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
@@ -15,8 +16,13 @@ public class BoardController {
 
   @GetMapping("/firstpage")
   public String boardText(){
-      List<> firstlist = new ArrayList<>();
+      List<Map<String, BoardDto>> firstlist = new ArrayList<>();
 
+      Map<String, BoardDto> secondlist = new HashMap<>();
+      BoardDto secondlist1Dto = new BoardDto("문자", 1, true);
+      secondlist.put("str", secondlist1Dto);
+      firstlist.add(secondlist);
+      firstlist.add(secondlist);
 
       System.out.println(firstlist);
 
