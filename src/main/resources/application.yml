@@ -19,7 +19,7 @@ spring:
       on-profile: "local"
   datasource:
     driver-class-name: org.mariadb.jdbc.Driver
-    url: jdbc:mariadb://211.48.64.194:3306/vpn_branch_dev?serverTimeZone=Asia/Seoul&useUnicode=true&rewriteBatchedStatements=true&allowMultiQueries=true&zeroDateTimeBehavior=convertToNull
+    url: jdbc:mariadb://211.48.64.194:3306/vpn-head-dev-test?serverTimeZone=Asia/Seoul&useUnicode=true&rewriteBatchedStatements=true&allowMultiQueries=true&zeroDateTimeBehavior=convertToNull
     username: devel
     password: devele1comm
 #  jpa:
@@ -36,4 +36,4 @@ spring:
 #      roles: ADMIN
 
 server:
-  port: 3306
+  port: 8080

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+
+  <form id="myForm" action="/ipRead" method="post">
+    <input type="text" name="srvrNo" placeholder="서버 번호">
+    <input type="text" name="srvrNm" placeholder="서버 이름">
+    <input type="text" name="srvrIp" placeholder="서버 아이피">
+    <input type="submit" value="조회">
+  </form>
+
+</head>
+<body>
+  <script>
+    document.getElementById('myForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const formData = new FormData(this);
+      console.log("formData: ", formData);
+
+      const plainFormData = {};
+      // const plainFormData = new Object();
+      for (const pair of formData.entries()) {
+        plainFormData[pair[0]] = pair[1];
+      }
+
+      const jsonData = JSON.stringify(plainFormData);
+
+      console.log("jsonData: ", jsonData)
+
+      this.submit();
+    });
+
+    // function ipInfoRead() {
+    //   fetch(window.location.origin + "/ipInfo", {
+    //     method: "POST",
+    //     headers: {
+    //       'Content-Type': 'application/json'
+    //     },
+    //     body: JSON.stringify(_data)
+    //   }).then(function (resp) {
+    //
+    //   });
+    // }
+  </script>
+</body>
+</html>
