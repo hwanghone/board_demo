@@ -1,0 +1,426 @@
+@import "reset.css";
+@import "common.css";
+.main-info h3,
+.main-table h3 {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.main-info {
+  width: calc(100% - 80px);
+  height: 156px;
+  background-color: #F5F5F5;
+  padding: 37px 40px 20px 40px;
+}
+.main-info ul {
+  display: flex;
+  gap: 16px;
+}
+.main-info ul li {
+  flex: 1;
+  height: 156px;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  padding: 40px;
+}
+.main-info ul li .case p:first-child {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+  font-weight: 700;
+}
+.main-info ul li .case p:first-child span {
+  font-size: 14px;
+  font-weight: 400;
+}
+.main-info ul li .case .case-num {
+  display: flex;
+  align-items: flex-end;
+  gap: 7px;
+  margin-top: 30px;
+}
+.main-info ul li .case .case-num p:first-child {
+  color: #ED1B23;
+  font-size: 46px;
+  font-weight: 600;
+}
+.main-info ul li .case .case-num p:last-child {
+  color: #232323;
+  font-size: 22px;
+  font-weight: 400;
+  margin-bottom: -4px;
+}
+
+.main-content {
+  background-color: #F5F5F5;
+  padding: 0 40px 40px 40px;
+}
+.main-content h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+.main-content h3 span {
+  color: #A7A7A7;
+  font-size: 12px;
+  font-weight: 400;
+  margin-left: 10px;
+}
+.main-content .main-grape {
+  box-sizing: border-box;
+  padding: 40px;
+  background-color: #ffffff;
+  margin-bottom: 20px;
+}
+.main-content .main-grape .main-grape-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.main-content .main-grape .main-grape-title .main-grape-select {
+  display: flex;
+  align-items: center;
+}
+.main-content .main-grape .main-grape-title .main-grape-select p {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.main-content .main-grape .main-grape-title .main-grape-select p span {
+  display: inline-block;
+  width: 26px;
+  height: 4px;
+  border-radius: 10px;
+  background-color: #589CDF;
+}
+.main-content .main-grape .main-grape-title .main-grape-select p:nth-of-type(1) span {
+  background-color: #589CDF;
+}
+.main-content .main-grape .main-grape-title .main-grape-select p:nth-of-type(2) {
+  margin: 0 30px 0 20px;
+}
+.main-content .main-grape .main-grape-title .main-grape-select p:nth-of-type(2) span {
+  background-color: #ED1B23;
+}
+.main-content .main-grape .main-grape-title .main-grape-select .search-select-wrap {
+  position: relative;
+}
+.main-content .main-grape .main-grape-title .main-grape-select .search-select-wrap .search-main-btn {
+  display: flex;
+  align-items: center;
+  width: 100px;
+}
+.main-content .main-grape .main-grape-title .main-grape-select .search-select-wrap .search-main-btn button {
+  width: 100px;
+  height: 32px;
+  text-align: left;
+  box-sizing: border-box;
+  border: 1px solid #d9d9d9;
+  border-right: 0;
+  padding-left: 10px;
+}
+.main-content .main-grape .main-grape-title .main-grape-select .search-select-wrap .search-main-btn p {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 30px;
+  height: 32px;
+  box-sizing: border-box;
+  border: 1px solid #d9d9d9;
+  border-left: 0;
+  padding-right: 10px;
+}
+.main-content .main-grape .main-grape-title .main-grape-select .search-select-wrap .search-main-btn .rotate-img {
+  width: 20px;
+  height: 20px;
+}
+.main-content .main-grape .main-grape-title .main-grape-select .search-select-wrap .search-main-btn .rotated {
+  transform: rotate(180deg);
+}
+.main-content .main-grape .main-grape-title .main-grape-select .search-select-wrap .search-select {
+  position: absolute;
+  top: 35px;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  width: 100px;
+  box-sizing: border-box;
+  border: 1px solid #d9d9d9;
+  z-index: 2;
+}
+.main-content .main-grape .main-grape-title .main-grape-select .search-select-wrap .search-select button {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  background-color: #ffffff;
+  padding: 0 12px;
+}
+.main-content .main-grape .main-grape-title .main-grape-select .search-select-wrap .search-select button .rotate-img {
+  transform: rotate(180deg);
+}
+.main-content .main-grape .main-grape-title .main-grape-select .search-select-wrap .search-select button:hover {
+  background-color: #F5F5F5;
+}
+.main-content .main-grape .main-grape-title .main-grape-select .search-select-wrap .search-select .active {
+  color: #ed1b23;
+  font-weight: 700;
+}
+.main-content .main-grape .main-grape-title .main-grape-select .search-select-wrap .search-select .active2 {
+  color: #ed1b23;
+  font-weight: 700;
+}
+.main-content .main-grape .main-grape-title .main-grape-select .search-select-wrap .search-select {
+  display: none;
+}
+.main-content .main-grape .main-grape-title .main-grape-select .search-select-wrap .visible {
+  display: block;
+}
+.main-content .main-grape .main-grape-title .main-grape-select .search-btn {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0 40px 0;
+}
+.main-content .main-grape .main-grape-title .main-grape-select .search-btn button {
+  width: 80px;
+  height: 32px;
+  font-size: 14px;
+  font-weight: 700;
+}
+.main-content .main-grape .main-grape-title .main-grape-select .search-btn button:first-child {
+  color: #ed1b23;
+  border: 1px solid #ed1b23;
+}
+.main-content .main-grape .main-grape-title .main-grape-select .search-btn button:first-child:hover {
+  color: #BB0007;
+  border: 1px solid #BB0007;
+}
+.main-content .main-grape .main-grape-title .main-grape-select .search-btn button:last-child {
+  color: #999999;
+  border: 1px solid #999999;
+  margin-left: 10px;
+}
+.main-content .main-grape .main-grape-title .main-grape-select .search-btn button:last-child:hover {
+  color: #5F5F5F;
+  border: 1px solid #5F5F5F;
+}
+.main-content .main-grape2 {
+  display: flex;
+  gap: 20px;
+}
+.main-content .main-grape2 .statistics {
+  flex: 1;
+  box-sizing: border-box;
+  padding: 40px;
+  background-color: #ffffff;
+}
+.main-content .main-grape2 .statistics ul {
+  display: flex;
+  margin-top: 30px;
+}
+.main-content .main-grape2 .statistics ul li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+.main-content .main-grape2 .statistics ul li:nth-child(2) {
+  box-sizing: border-box;
+  border-left: 1px solid #D9D9D9;
+  border-right: 1px solid #D9D9D9;
+}
+.main-content .main-grape2 .statistics ul li p:first-child {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 32px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+.main-content .main-grape2 .statistics ul li p:first-child span {
+  font-size: 16px;
+}
+.main-content .main-grape2 .statistics ul li p:last-child {
+  font-size: 14px;
+}
+
+.icon-button,
+.icon-button2 {
+  width: 20px;
+  height: 20px;
+  margin: 0 auto;
+}
+.icon-button .before-img,
+.icon-button2 .before-img {
+  display: block;
+}
+.icon-button .after-img,
+.icon-button2 .after-img {
+  display: none;
+}
+.icon-button:hover .before-img,
+.icon-button2:hover .before-img {
+  display: none;
+}
+.icon-button:hover .after-img,
+.icon-button2:hover .after-img {
+  display: block;
+}
+
+.one-table,
+.two-table,
+.four-table,
+.five-table,
+.six-table {
+  width: 100%;
+  text-align: center;
+  margin-top: 16px;
+}
+.one-table thead,
+.two-table thead,
+.four-table thead,
+.five-table thead,
+.six-table thead {
+  width: 100%;
+  height: 36px;
+  font-size: 13px;
+  font-weight: 500;
+  border-top: 1px solid #d9d9d9;
+  border-bottom: 1px solid #d9d9d9;
+  background-color: #EBEBEB;
+}
+.one-table thead td:not(:last-child),
+.two-table thead td:not(:last-child),
+.four-table thead td:not(:last-child),
+.five-table thead td:not(:last-child),
+.six-table thead td:not(:last-child) {
+  border-right: 1px solid #d9d9d9;
+}
+.one-table thead td .th-btn,
+.two-table thead td .th-btn,
+.four-table thead td .th-btn,
+.five-table thead td .th-btn,
+.six-table thead td .th-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.one-table thead td .th-btn .table-btn,
+.two-table thead td .th-btn .table-btn,
+.four-table thead td .th-btn .table-btn,
+.five-table thead td .th-btn .table-btn,
+.six-table thead td .th-btn .table-btn {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+.one-table thead td .th-btn .table-btn button,
+.two-table thead td .th-btn .table-btn button,
+.four-table thead td .th-btn .table-btn button,
+.five-table thead td .th-btn .table-btn button,
+.six-table thead td .th-btn .table-btn button {
+  width: 8px;
+  height: 8px;
+}
+.one-table thead td .th-btn .table-btn button:first-child,
+.two-table thead td .th-btn .table-btn button:first-child,
+.four-table thead td .th-btn .table-btn button:first-child,
+.five-table thead td .th-btn .table-btn button:first-child,
+.six-table thead td .th-btn .table-btn button:first-child {
+  background: url(../img/up-arrow.png) no-repeat center;
+}
+.one-table thead td .th-btn .table-btn button .active3,
+.two-table thead td .th-btn .table-btn button .active3,
+.four-table thead td .th-btn .table-btn button .active3,
+.five-table thead td .th-btn .table-btn button .active3,
+.six-table thead td .th-btn .table-btn button .active3 {
+  background: url(../img/up-arrow2.png) no-repeat center;
+}
+.one-table thead td .th-btn .table-btn button:last-child,
+.two-table thead td .th-btn .table-btn button:last-child,
+.four-table thead td .th-btn .table-btn button:last-child,
+.five-table thead td .th-btn .table-btn button:last-child,
+.six-table thead td .th-btn .table-btn button:last-child {
+  background: url(../img/down-arrow.png) no-repeat center;
+}
+.one-table thead td .th-btn .table-btn button .active4,
+.two-table thead td .th-btn .table-btn button .active4,
+.four-table thead td .th-btn .table-btn button .active4,
+.five-table thead td .th-btn .table-btn button .active4,
+.six-table thead td .th-btn .table-btn button .active4 {
+  background: url(../img/down-arrow2.png) no-repeat center;
+}
+.one-table thead td .th-btn .table-btn button span,
+.two-table thead td .th-btn .table-btn button span,
+.four-table thead td .th-btn .table-btn button span,
+.five-table thead td .th-btn .table-btn button span,
+.six-table thead td .th-btn .table-btn button span {
+  display: none;
+}
+.one-table tbody,
+.two-table tbody,
+.four-table tbody,
+.five-table tbody,
+.six-table tbody {
+  font-size: 12px;
+}
+.one-table tbody tr,
+.two-table tbody tr,
+.four-table tbody tr,
+.five-table tbody tr,
+.six-table tbody tr {
+  height: 48px;
+  border-bottom: 1px solid #d9d9d9;
+}
+.one-table tbody tr:nth-child(even),
+.two-table tbody tr:nth-child(even),
+.four-table tbody tr:nth-child(even),
+.five-table tbody tr:nth-child(even),
+.six-table tbody tr:nth-child(even) {
+  background-color: #F8F8F8;
+}
+.one-table tbody tr td:not(:last-child),
+.two-table tbody tr td:not(:last-child),
+.four-table tbody tr td:not(:last-child),
+.five-table tbody tr td:not(:last-child),
+.six-table tbody tr td:not(:last-child) {
+  border-right: 1px solid #d9d9d9;
+}
+.one-table tbody tr td:nth-child(3) a img,
+.two-table tbody tr td:nth-child(3) a img,
+.four-table tbody tr td:nth-child(3) a img,
+.five-table tbody tr td:nth-child(3) a img,
+.six-table tbody tr td:nth-child(3) a img {
+  margin-left: 6px;
+}
+
+.two-table thead {
+  height: 49px;
+}
+.two-table thead tr:last-child {
+  border-top: 1px solid #d9d9d9;
+}
+.two-table thead tr:last-child td:last-child {
+  border-right: 1px solid #d9d9d9;
+}
+.two-table tbody tr:nth-child(even) {
+  background-color: #ffffff;
+}
+.two-table tbody tr:nth-child(even) td:last-child {
+  border-right: 1px solid #d9d9d9;
+}
+.two-table tbody tr:nth-child(3), .two-table tbody tr:nth-child(4), .two-table tbody tr:nth-child(7), .two-table tbody tr:nth-child(8) {
+  background-color: #F8F8F8;
+}
+.two-table tbody .payment-top td:first-child, .two-table tbody .payment-top td:nth-child(3), .two-table tbody .payment-top td:nth-child(4), .two-table tbody .payment-top td:nth-child(n+6):nth-child(-n+13) {
+  height: 72px;
+}
+.two-table tbody .payment-top td:nth-child(2), .two-table tbody .payment-top td:nth-child(5) {
+  height: 36px;
+}
+.two-table tbody .payment-bottom td {
+  height: 36px;
+}/*# sourceMappingURL=main.css.map */
