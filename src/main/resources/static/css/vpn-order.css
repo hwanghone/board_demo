@@ -1,0 +1,47 @@
+@import "reset.css";
+@import "common.css";
+@import "main.css";
+.order-table .two-table thead tr {
+  font-weight: 500;
+}
+.order-table .two-table thead tr:first-child td:first-child {
+  width: 6.25%;
+}
+.order-table .two-table thead tr:first-child td:nth-child(2) {
+  width: 11.25%;
+}
+.order-table .two-table thead tr:first-child td:nth-child(3) {
+  width: 8.75%;
+}
+.order-table .two-table thead tr:first-child td:nth-child(4) {
+  width: 7.5%;
+}
+.order-table .two-table thead tr:first-child td:nth-child(n+5):nth-child(-n+11) {
+  width: 7.1875%;
+}
+.order-table .two-table thead tr:first-child td:nth-last-child(2), .order-table .two-table thead tr:first-child td:last-child {
+  width: 4.375%;
+}
+.order-table .two-table thead tr:last-child td:first-child, .order-table .two-table thead tr:last-child td:nth-child(2) {
+  width: 5.625%;
+}
+.order-table .two-table thead tr:last-child td:last-child {
+  width: 7.1875%;
+}
+.order-table .two-table tbody .bold {
+  font-weight: 700;
+}
+.order-table .two-table tbody .bold-blue {
+  color: #589cdf;
+  font-weight: 700;
+}
+.order-table .two-table tbody .bold-red {
+  color: #ed1b23;
+  font-weight: 700;
+}
+.order-table .two-table tbody .bold-green {
+  color: #508f00;
+}
+.order-table .two-table tbody .light-red {
+  color: #ed1b23;
+}/*# sourceMappingURL=vpn-order.css.map */
