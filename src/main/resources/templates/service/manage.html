@@ -1,0 +1,2484 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HotVPN 관리 솔루션</title>
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+    <link rel="stylesheet" href="/css/service.css">
+    <link rel="stylesheet" href="/css/modal.css">
+</head>
+<body>
+    <div id="admin">
+        <section id="header">
+            <div class="gnb-title">
+                <h1><a href="main.html"><img src="/img/logo2.png" alt="HotVPN logo"></a></h1>
+                <p>VPN 관리 솔루션</p>   
+            </div>
+            <div class="gnb">
+                <button type="button" class="menu-btn active">환경설정<img src="/img/gnb-down.png" alt="menu arrow"></button>
+                <div class="menu">
+                    <p><a href="basic.html" class="active2">기본 환경설정</a></p>
+                    <p><a href="manage.html" class="active2">관리자 관리</a></p>
+                    <p><a href="authority.html" class="active2">관리자 권한 설정</a></p>
+                    <p><a href="program.html" class="active2">프로그램 업데이트</a></p>
+                    <p><a href="pg.html" class="active2">PG 설정</a></p>
+                </div>                        
+                <button type="button" class="menu-btn active">주문관리<img src="/img/gnb-down.png" alt="menu arrow"></button>
+                <div class="menu">
+                    <p><a href="vpn-order.html" class="active2">VPN 서비스 주문 내역</a></p>
+                    <p><a href="ip-order.html" class="active2">아이피 교체권 주문 내역</a></p>
+                    <p><a href="cancel.html" class="active2">결제 취소 내역</a></p>
+                    <p><a href="fail.html" class="active2">결제 실패 내역</a></p>
+                </div>                                           
+                <button type="button" class="menu-btn active">서비스 관리<img src="/img/gnb-down.png" alt="menu arrow"></button>
+                <div class="menu">
+                    <p><a href="service.html" class="active2">VPN 서비스 관리</a></p>
+                    <p><a href="service-change.html" class="active2">VPN 서비스 변경 내역</a></p>
+                </div> 
+                <button type="button" class="menu-btn active">고객 관리<img src="/img/gnb-down.png" alt="menu arrow"></button>
+                <div class="menu">
+                    <p><a href="member.html" class="active2">회원 관리</a></p>
+                    <p><a href="ip-manage.html" class="active2">아이피 교체권 관리</a></p>
+                    <p><a href="point.html" class="active2">포인트 관리</a></p>
+                </div> 
+                <p><a href="vpn-log.html" class="menu-btn active">VPN 접속 로그</a></p>   
+                <button type="button" class="menu-btn active">VPN 현황<img src="/img/gnb-down.png" alt="menu arrow"></button>
+                <div class="menu">
+                    <p><a href="vpn-fix.html" class="active2">고정 VPN 현황</a></p>
+                    <p><a href="vpn-flow.html" class="active2">유동 VPN 현황</a></p>
+                </div>   
+                <button type="button" class="menu-btn active">SMS 관리<img src="/img/gnb-down.png" alt="menu arrow"></button>
+                <div class="menu">
+                    <p><a href="sms-setting.html" class="active2">SMS 설정</a></p>
+                    <p><a href="sms-send.html" class="active2">SMS 발송</a></p>
+                    <p><a href="sms-history.html" class="active2">SMS 발송 내역</a></p>
+                </div>                                                                                          
+                <button type="button" class="menu-btn active">고객센터<img src="/img/gnb-down.png" alt="menu arrow"></button>
+                <div class="menu">
+                    <p><a href="notice.html" class="active2">공지사항</a></p>
+                    <p><a href="inquiry.html" class="active2">1:1문의</a></p>
+                    <p><a href="faq.html" class="active2">FAQ</a></p>
+                </div>  
+                <p><a href="sales.html" class="menu-btn active">매출 통계</a></p>                                                                                         
+            </div>
+        </section>
+        <section id="content">
+            <div class="menu-title">
+                <h2>VPN 서비스 관리</h2>
+                <div class="user">
+                    <p>홍길동<span>상담원</span></p>
+                    <button type="button">로그아웃</button>
+                    <p><img src="/img/new.png" alt="new icon">1:1문의<span>1,000</span>건</p>
+                </div>
+            </div>
+            <div class="content-area">
+                <div class="search">
+                    <div class="search-top">
+                        <ul>
+                            <li>사용중<span>1,000</span>개</li>
+                            <li>서비스 종료<span>1,000</span>개</li>
+                            <li>서비스 없음<span>1,000</span>개</li>
+                            <li>접속중<span>1,000</span>개</li>
+                            <li>접속 종료<span>1,000</span>개</li>
+                            <li>사용률<span>80,123</span>%</li>
+                            <li>접속률<span>80,123</span>%</li>
+                        </ul>
+                        <p><a href="#" download="download.xlsx"><img src="/img/ex.png" alt="excel logo">엑셀 다운로드</a></p>
+                    </div>
+                    <div class="filter">
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td class="half">
+                                        <p>서비스 상태</p>
+                                        <div class="checkbox">
+                                            <input type="checkbox" id="check" checked>
+                                            <label for="check">전체</label>
+                                            <input type="checkbox" id="check2" checked>
+                                            <label for="check2">사용중</label>
+                                            <input type="checkbox" id="check3" checked>
+                                            <label for="check3">서비스 종료</label>
+                                            <input type="checkbox" id="check4" checked>
+                                            <label for="check4">서비스 없음</label>
+                                        </div>                                           
+                                    </td>                                    
+                                    <td class="half">
+                                        <p>접속 상태</p>
+                                        <div class="radio">
+                                            <input type="radio" id="radio" name="option" checked>
+                                            <label for="radio">전체</label>
+                                            <input type="radio" id="radio2" name="option">
+                                            <label for="radio2">접속중</label>
+                                            <input type="radio" id="radio3" name="option">
+                                            <label for="radio3">접속 종료</label>
+                                        </div>                                          
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="half">
+                                        <p>회원 아이디</p>
+                                        <input type="text" placeholder="아이디를(을) 입력해주세요.">
+                                    </td>
+                                    <td class="half">
+                                        <p>서브 아이디</p>
+                                        <input type="text" placeholder="아이디를(을) 입력해주세요.">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>아이피</p>
+                                        <input type="text" placeholder="아이피를(을) 입력해주세요.">
+                                    </td>
+                                <tr>
+                                    <td>
+                                        <p>서비스 기간</p>
+                                        <div class="date-wrap">
+                                            <div class="date-control">
+                                                <input type="number" placeholder="2024-01-01 00:00:00">
+                                                <button type="button" class="date-popup-btn"><span>none</span></button>
+                                                <div class="date-popup"></div>
+                                                <div class="date-popup-wrap">
+                                                    <div class="date-year">
+                                                        <button type="button"><img src="/img/date1.png" alt="left arrow"></button>
+                                                        <div class="date-year-select-wrap">
+                                                            <div>
+                                                                <button type="button">2023</button>
+                                                                <p><img src="/img/down.png" class="rotate-img" alt="down arrow"></p>
+                                                            </div>
+                                                            <div>
+                                                                <button type="button">10월</button>
+                                                                <p><img src="/img/down.png" class="rotate-img" alt="down arrow"></p>
+                                                            </div>
+                                                        </div>
+                                                        <button type="button"><img src="/img/date2.png" alt="right arrow"></button>
+                                                    </div>
+                                                    <div class="year">
+                                                        <button type="button">2019</button>
+                                                        <button type="button">2020</button>
+                                                        <button type="button">2021</button>
+                                                        <button type="button">2022</button>
+                                                        <button type="button" class="active4">2023</button>
+                                                    </div>
+                                                    <div class="month">
+                                                        <button type="button" class="active4">1월</button>
+                                                        <button type="button">2월</button>
+                                                        <button type="button">3월</button>
+                                                        <button type="button">4월</button>
+                                                        <button type="button">5월</button>
+                                                        <button type="button">6월</button>
+                                                        <button type="button">7월</button>
+                                                        <button type="button">8월</button>
+                                                        <button type="button">9월</button>
+                                                        <button type="button">10월</button>
+                                                        <button type="button">11월</button>
+                                                        <button type="button">12월</button>
+                                                    </div>
+                                                    <div class="date-table">
+                                                        <ul>
+                                                            <li>일</li>
+                                                            <li>월</li>
+                                                            <li>화</li>
+                                                            <li>수</li>
+                                                            <li>목</li>
+                                                            <li>금</li>
+                                                            <li>토</li>
+                                                        </ul>
+                                                        <ul>
+                                                            <li class="active5">1</li>
+                                                            <li>2</li>
+                                                            <li>3</li>
+                                                            <li>4</li>
+                                                            <li>5</li>
+                                                            <li>6</li>
+                                                            <li>7</li>
+                                                            <li>8</li>
+                                                            <li>9</li>
+                                                            <li>10</li>
+                                                            <li>11</li>
+                                                            <li>12</li>
+                                                            <li>13</li>
+                                                            <li>14</li>
+                                                            <li>15</li>
+                                                            <li>16</li>
+                                                            <li>17</li>
+                                                            <li>18</li>
+                                                            <li>19</li>
+                                                            <li>20</li>
+                                                            <li>21</li>
+                                                            <li>22</li>
+                                                            <li>23</li>
+                                                            <li>24</li>
+                                                            <li>25</li>
+                                                            <li>26</li>
+                                                            <li>27</li>
+                                                            <li>28</li>
+                                                            <li>29</li>
+                                                            <li>30</li>
+                                                            <li>31</li>
+                                                            <li></li>
+                                                            <li></li>
+                                                            <li></li>
+                                                            <li></li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="date-time">
+                                                        <div>
+                                                            <button type="button">13</button>
+                                                            <p><img src="/img/down.png" class="rotate-img" alt="down arrow"></p>
+                                                        </div>
+                                                        <p>시</p>
+                                                        <div>
+                                                            <button type="button">00</button>
+                                                            <p><img src="/img/down.png" class="rotate-img" alt="down arrow"></p>
+                                                        </div>
+                                                        <p>분</p>
+                                                        <div>
+                                                            <button type="button">00</button>
+                                                            <p><img src="/img/down.png" class="rotate-img" alt="down arrow"></p>
+                                                        </div>
+                                                        <p>초</p>
+                                                    </div>
+                                                    <div class="hour">
+                                                        <button type="button" class="active4">01</button>
+                                                        <button type="button">02</button>
+                                                        <button type="button">03</button>
+                                                        <button type="button">04</button>
+                                                        <button type="button">05</button>
+                                                        <button type="button">06</button>
+                                                        <button type="button">07</button>
+                                                        <button type="button">08</button>
+                                                        <button type="button">09</button>
+                                                        <button type="button">10</button>
+                                                        <button type="button">11</button>
+                                                        <button type="button">12</button>
+                                                        <button type="button">13</button>
+                                                        <button type="button">14</button>
+                                                        <button type="button">15</button>
+                                                        <button type="button">16</button>
+                                                        <button type="button">17</button>
+                                                        <button type="button">18</button>
+                                                        <button type="button">19</button>
+                                                        <button type="button">20</button>
+                                                        <button type="button">21</button>
+                                                        <button type="button">22</button>
+                                                        <button type="button">23</button>
+                                                        <button type="button">24</button>
+                                                    </div>
+                                                    <div class="minute">
+                                                        <button type="button" class="active4">00</button>
+                                                        <button type="button">01</button>
+                                                        <button type="button">02</button>
+                                                        <button type="button">03</button>
+                                                        <button type="button">04</button>
+                                                        <button type="button">05</button>
+                                                        <button type="button">06</button>
+                                                        <button type="button">07</button>
+                                                        <button type="button">08</button>
+                                                        <button type="button">09</button>
+                                                        <button type="button">10</button>
+                                                        <button type="button">11</button>
+                                                        <button type="button">12</button>
+                                                        <button type="button">13</button>
+                                                        <button type="button">14</button>
+                                                        <button type="button">15</button>
+                                                        <button type="button">16</button>
+                                                        <button type="button">17</button>
+                                                        <button type="button">18</button>
+                                                        <button type="button">19</button>
+                                                        <button type="button">20</button>
+                                                        <button type="button">21</button>
+                                                        <button type="button">22</button>
+                                                        <button type="button">23</button>
+                                                        <button type="button">24</button>
+                                                        <button type="button">25</button>
+                                                        <button type="button">26</button>
+                                                        <button type="button">27</button>
+                                                        <button type="button">28</button>
+                                                        <button type="button">29</button>
+                                                        <button type="button">30</button>
+                                                        <button type="button">31</button>
+                                                        <button type="button">32</button>
+                                                        <button type="button">33</button>
+                                                        <button type="button">34</button>
+                                                        <button type="button">35</button>
+                                                        <button type="button">36</button>
+                                                        <button type="button">37</button>
+                                                        <button type="button">38</button>
+                                                        <button type="button">39</button>
+                                                        <button type="button">40</button>
+                                                        <button type="button">41</button>
+                                                        <button type="button">42</button>
+                                                        <button type="button">43</button>
+                                                        <button type="button">44</button>
+                                                        <button type="button">45</button>
+                                                        <button type="button">46</button>
+                                                        <button type="button">47</button>
+                                                        <button type="button">48</button>
+                                                        <button type="button">49</button>
+                                                        <button type="button">50</button>
+                                                        <button type="button">51</button>
+                                                        <button type="button">52</button>
+                                                        <button type="button">53</button>
+                                                        <button type="button">54</button>
+                                                        <button type="button">55</button>
+                                                        <button type="button">56</button>
+                                                        <button type="button">57</button>
+                                                        <button type="button">58</button>
+                                                        <button type="button">59</button>
+                                                        <button type="button">60</button>
+                                                    </div>
+                                                    <div class="second">
+                                                        <button type="button" class="active4">00</button>
+                                                        <button type="button">01</button>
+                                                        <button type="button">02</button>
+                                                        <button type="button">03</button>
+                                                        <button type="button">04</button>
+                                                        <button type="button">05</button>
+                                                        <button type="button">06</button>
+                                                        <button type="button">07</button>
+                                                        <button type="button">08</button>
+                                                        <button type="button">09</button>
+                                                        <button type="button">10</button>
+                                                        <button type="button">11</button>
+                                                        <button type="button">12</button>
+                                                        <button type="button">13</button>
+                                                        <button type="button">14</button>
+                                                        <button type="button">15</button>
+                                                        <button type="button">16</button>
+                                                        <button type="button">17</button>
+                                                        <button type="button">18</button>
+                                                        <button type="button">19</button>
+                                                        <button type="button">20</button>
+                                                        <button type="button">21</button>
+                                                        <button type="button">22</button>
+                                                        <button type="button">23</button>
+                                                        <button type="button">24</button>
+                                                        <button type="button">25</button>
+                                                        <button type="button">26</button>
+                                                        <button type="button">27</button>
+                                                        <button type="button">28</button>
+                                                        <button type="button">29</button>
+                                                        <button type="button">30</button>
+                                                        <button type="button">31</button>
+                                                        <button type="button">32</button>
+                                                        <button type="button">33</button>
+                                                        <button type="button">34</button>
+                                                        <button type="button">35</button>
+                                                        <button type="button">36</button>
+                                                        <button type="button">37</button>
+                                                        <button type="button">38</button>
+                                                        <button type="button">39</button>
+                                                        <button type="button">40</button>
+                                                        <button type="button">41</button>
+                                                        <button type="button">42</button>
+                                                        <button type="button">43</button>
+                                                        <button type="button">44</button>
+                                                        <button type="button">45</button>
+                                                        <button type="button">46</button>
+                                                        <button type="button">47</button>
+                                                        <button type="button">48</button>
+                                                        <button type="button">49</button>
+                                                        <button type="button">50</button>
+                                                        <button type="button">51</button>
+                                                        <button type="button">52</button>
+                                                        <button type="button">53</button>
+                                                        <button type="button">54</button>
+                                                        <button type="button">55</button>
+                                                        <button type="button">56</button>
+                                                        <button type="button">57</button>
+                                                        <button type="button">58</button>
+                                                        <button type="button">59</button>
+                                                        <button type="button">60</button>
+                                                    </div>
+                                                    <div class="date-btn">
+                                                        <button type="button">확인</button>
+                                                        <button type="button">취소</button>
+                                                    </div>
+                                                </div>                           
+                                            </div>
+                                            <p>~</p>
+                                            <div class="date-control">
+                                                <input type="number" placeholder="2024-01-01 00:00:00">
+                                                <button type="button" class="date-popup-btn2"><span>none</span></button>
+                                                <div class="date-popup2"></div>
+                                                <div class="date-popup-wrap2">
+                                                    <div class="date-year">
+                                                        <button type="button"><img src="/img/date1.png" alt="left arrow"></button>
+                                                        <div class="date-year-select-wrap">
+                                                            <div>
+                                                                <button type="button">2023</button>
+                                                                <p><img src="/img/down.png" class="rotate-img" alt="down arrow"></p>
+                                                            </div>
+                                                            <div>
+                                                                <button type="button">10월</button>
+                                                                <p><img src="/img/down.png" class="rotate-img" alt="down arrow"></p>
+                                                            </div>
+                                                        </div>
+                                                        <button type="button"><img src="/img/date2.png" alt="right arrow"></button>
+                                                    </div>
+                                                    <div class="year">
+                                                        <button type="button">2019</button>
+                                                        <button type="button">2020</button>
+                                                        <button type="button">2021</button>
+                                                        <button type="button">2022</button>
+                                                        <button type="button" class="active4">2023</button>
+                                                    </div>
+                                                    <div class="month">
+                                                        <button type="button" class="active4">1월</button>
+                                                        <button type="button">2월</button>
+                                                        <button type="button">3월</button>
+                                                        <button type="button">4월</button>
+                                                        <button type="button">5월</button>
+                                                        <button type="button">6월</button>
+                                                        <button type="button">7월</button>
+                                                        <button type="button">8월</button>
+                                                        <button type="button">9월</button>
+                                                        <button type="button">10월</button>
+                                                        <button type="button">11월</button>
+                                                        <button type="button">12월</button>
+                                                    </div>
+                                                    <div class="date-table">
+                                                        <ul>
+                                                            <li>일</li>
+                                                            <li>월</li>
+                                                            <li>화</li>
+                                                            <li>수</li>
+                                                            <li>목</li>
+                                                            <li>금</li>
+                                                            <li>토</li>
+                                                        </ul>
+                                                        <ul>
+                                                            <li class="active5">1</li>
+                                                            <li>2</li>
+                                                            <li>3</li>
+                                                            <li>4</li>
+                                                            <li>5</li>
+                                                            <li>6</li>
+                                                            <li>7</li>
+                                                            <li>8</li>
+                                                            <li>9</li>
+                                                            <li>10</li>
+                                                            <li>11</li>
+                                                            <li>12</li>
+                                                            <li>13</li>
+                                                            <li>14</li>
+                                                            <li>15</li>
+                                                            <li>16</li>
+                                                            <li>17</li>
+                                                            <li>18</li>
+                                                            <li>19</li>
+                                                            <li>20</li>
+                                                            <li>21</li>
+                                                            <li>22</li>
+                                                            <li>23</li>
+                                                            <li>24</li>
+                                                            <li>25</li>
+                                                            <li>26</li>
+                                                            <li>27</li>
+                                                            <li>28</li>
+                                                            <li>29</li>
+                                                            <li>30</li>
+                                                            <li>31</li>
+                                                            <li></li>
+                                                            <li></li>
+                                                            <li></li>
+                                                            <li></li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="date-time">
+                                                        <div>
+                                                            <button type="button">13</button>
+                                                            <p><img src="/img/down.png" class="rotate-img" alt="down arrow"></p>
+                                                        </div>
+                                                        <p>시</p>
+                                                        <div>
+                                                            <button type="button">00</button>
+                                                            <p><img src="/img/down.png" class="rotate-img" alt="down arrow"></p>
+                                                        </div>
+                                                        <p>분</p>
+                                                        <div>
+                                                            <button type="button">00</button>
+                                                            <p><img src="/img/down.png" class="rotate-img" alt="down arrow"></p>
+                                                        </div>
+                                                        <p>초</p>
+                                                    </div>
+                                                    <div class="hour">
+                                                        <button type="button" class="active4">01</button>
+                                                        <button type="button">02</button>
+                                                        <button type="button">03</button>
+                                                        <button type="button">04</button>
+                                                        <button type="button">05</button>
+                                                        <button type="button">06</button>
+                                                        <button type="button">07</button>
+                                                        <button type="button">08</button>
+                                                        <button type="button">09</button>
+                                                        <button type="button">10</button>
+                                                        <button type="button">11</button>
+                                                        <button type="button">12</button>
+                                                        <button type="button">13</button>
+                                                        <button type="button">14</button>
+                                                        <button type="button">15</button>
+                                                        <button type="button">16</button>
+                                                        <button type="button">17</button>
+                                                        <button type="button">18</button>
+                                                        <button type="button">19</button>
+                                                        <button type="button">20</button>
+                                                        <button type="button">21</button>
+                                                        <button type="button">22</button>
+                                                        <button type="button">23</button>
+                                                        <button type="button">24</button>
+                                                    </div>
+                                                    <div class="minute">
+                                                        <button type="button" class="active4">00</button>
+                                                        <button type="button">01</button>
+                                                        <button type="button">02</button>
+                                                        <button type="button">03</button>
+                                                        <button type="button">04</button>
+                                                        <button type="button">05</button>
+                                                        <button type="button">06</button>
+                                                        <button type="button">07</button>
+                                                        <button type="button">08</button>
+                                                        <button type="button">09</button>
+                                                        <button type="button">10</button>
+                                                        <button type="button">11</button>
+                                                        <button type="button">12</button>
+                                                        <button type="button">13</button>
+                                                        <button type="button">14</button>
+                                                        <button type="button">15</button>
+                                                        <button type="button">16</button>
+                                                        <button type="button">17</button>
+                                                        <button type="button">18</button>
+                                                        <button type="button">19</button>
+                                                        <button type="button">20</button>
+                                                        <button type="button">21</button>
+                                                        <button type="button">22</button>
+                                                        <button type="button">23</button>
+                                                        <button type="button">24</button>
+                                                        <button type="button">25</button>
+                                                        <button type="button">26</button>
+                                                        <button type="button">27</button>
+                                                        <button type="button">28</button>
+                                                        <button type="button">29</button>
+                                                        <button type="button">30</button>
+                                                        <button type="button">31</button>
+                                                        <button type="button">32</button>
+                                                        <button type="button">33</button>
+                                                        <button type="button">34</button>
+                                                        <button type="button">35</button>
+                                                        <button type="button">36</button>
+                                                        <button type="button">37</button>
+                                                        <button type="button">38</button>
+                                                        <button type="button">39</button>
+                                                        <button type="button">40</button>
+                                                        <button type="button">41</button>
+                                                        <button type="button">42</button>
+                                                        <button type="button">43</button>
+                                                        <button type="button">44</button>
+                                                        <button type="button">45</button>
+                                                        <button type="button">46</button>
+                                                        <button type="button">47</button>
+                                                        <button type="button">48</button>
+                                                        <button type="button">49</button>
+                                                        <button type="button">50</button>
+                                                        <button type="button">51</button>
+                                                        <button type="button">52</button>
+                                                        <button type="button">53</button>
+                                                        <button type="button">54</button>
+                                                        <button type="button">55</button>
+                                                        <button type="button">56</button>
+                                                        <button type="button">57</button>
+                                                        <button type="button">58</button>
+                                                        <button type="button">59</button>
+                                                        <button type="button">60</button>
+                                                    </div>
+                                                    <div class="second">
+                                                        <button type="button" class="active4">00</button>
+                                                        <button type="button">01</button>
+                                                        <button type="button">02</button>
+                                                        <button type="button">03</button>
+                                                        <button type="button">04</button>
+                                                        <button type="button">05</button>
+                                                        <button type="button">06</button>
+                                                        <button type="button">07</button>
+                                                        <button type="button">08</button>
+                                                        <button type="button">09</button>
+                                                        <button type="button">10</button>
+                                                        <button type="button">11</button>
+                                                        <button type="button">12</button>
+                                                        <button type="button">13</button>
+                                                        <button type="button">14</button>
+                                                        <button type="button">15</button>
+                                                        <button type="button">16</button>
+                                                        <button type="button">17</button>
+                                                        <button type="button">18</button>
+                                                        <button type="button">19</button>
+                                                        <button type="button">20</button>
+                                                        <button type="button">21</button>
+                                                        <button type="button">22</button>
+                                                        <button type="button">23</button>
+                                                        <button type="button">24</button>
+                                                        <button type="button">25</button>
+                                                        <button type="button">26</button>
+                                                        <button type="button">27</button>
+                                                        <button type="button">28</button>
+                                                        <button type="button">29</button>
+                                                        <button type="button">30</button>
+                                                        <button type="button">31</button>
+                                                        <button type="button">32</button>
+                                                        <button type="button">33</button>
+                                                        <button type="button">34</button>
+                                                        <button type="button">35</button>
+                                                        <button type="button">36</button>
+                                                        <button type="button">37</button>
+                                                        <button type="button">38</button>
+                                                        <button type="button">39</button>
+                                                        <button type="button">40</button>
+                                                        <button type="button">41</button>
+                                                        <button type="button">42</button>
+                                                        <button type="button">43</button>
+                                                        <button type="button">44</button>
+                                                        <button type="button">45</button>
+                                                        <button type="button">46</button>
+                                                        <button type="button">47</button>
+                                                        <button type="button">48</button>
+                                                        <button type="button">49</button>
+                                                        <button type="button">50</button>
+                                                        <button type="button">51</button>
+                                                        <button type="button">52</button>
+                                                        <button type="button">53</button>
+                                                        <button type="button">54</button>
+                                                        <button type="button">55</button>
+                                                        <button type="button">56</button>
+                                                        <button type="button">57</button>
+                                                        <button type="button">58</button>
+                                                        <button type="button">59</button>
+                                                        <button type="button">60</button>
+                                                    </div>
+                                                    <div class="date-btn">
+                                                        <button type="button">확인</button>
+                                                        <button type="button">취소</button>
+                                                    </div>
+                                                </div>                          
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="search-btn">
+                    <button type="button">검색</button>
+                    <button type="button">초기화</button>
+                </div>
+                <div class="service-btn">
+                    <button type="button" class="bulk-change">기간 일괄 변경</button>
+                    <button type="button" class="bulk-transfer">기간 일괄 이전</button>
+                </div>
+                <div class="order-table">
+                    <table class="four-table service-table">
+                        <thead>
+                            <tr>
+                                <td>
+                                    <div class="checkbox-cc">
+                                        <input type="checkbox" id="cc">
+                                        <label for="cc"></label>
+                                    </div>
+                                </td>
+                                <td>번호</td>
+                                <td>서비스 상태</td>
+                                <td>접속 상태</td>
+                                <td>회원 아이디</td>
+                                <td>서브 아이디</td>
+                                <td>서비스 구분</td>
+                                <td>남은 기간</td>
+                                <td>서비스 기간</td>
+                                <td>아이피</td>
+                                <td>더보기</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="checkbox-table">
+                                        <input type="checkbox" id="check5">
+                                        <label for="check5"></label>
+                                    </div>
+                                </td>
+                                <td>1000000010</td>
+                                <td>사용중</td>
+                                <td>
+                                    <div class="start">
+                                        <p><span></span>접속중</p>
+                                    </div>
+                                </td>
+                                <td>test1234</td>
+                                <td>test1234</td>
+                                <td>통신사 고정 VPN</td>
+                                <td>1,000일 20시간 20분 20초</td>
+                                <td>2020-02-02 20:20:20 ~ 2020-02-02 20:20:20</td>
+                                <td>111.222.333.444</td>
+                                <td>
+                                    <div class="button-select">
+                                        <button type="button" class="icon-button">
+                                            <img src="/img/more.png" alt="more icon" class="before-img">
+                                            <img src="/img/more2.png" alt="more icon" class="after-img more-btn">
+                                        </button>
+                                        <div class="button-btn">
+                                            <button type="button" class="active4 service-date-btn">서비스 기간 변경</button>
+                                            <button type="button" class="service-date-btn2">서비스 기간 이전</button>
+                                            <button type="button" class="service-date-btn3">아이피 변경</button>
+                                        </div>   
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="cancellation">
+                                <td></td>
+                                <td>1000000010</td>
+                                <td>서비스 종료</td>
+                                <td>-</td>
+                                <td>test1234</td>
+                                <td>test1234</td>
+                                <td>통신사 고정 VPN</td>
+                                <td>1,000일 20시간 20분 20초</td>
+                                <td>2020-02-02 20:20:20 ~ 2020-02-02 20:20:20</td>
+                                <td>111.222.333.444</td>
+                                <td>
+                                    <div class="button-select">
+                                        <button type="button" class="icon-button">
+                                            <img src="/img/more.png" alt="more icon" class="before-img">
+                                            <img src="/img/more2.png" alt="more icon" class="after-img more-btn">
+                                        </button>
+                                        <div class="button-btn">
+                                            <button type="button" class="active4 service-date-btn">서비스 기간 변경</button>
+                                            <button type="button" class="service-date-btn2">서비스 기간 이전</button>
+                                            <button type="button" class="service-date-btn3">아이피 변경</button>
+                                        </div>   
+                                    </div>
+                                </td>
+                            </tr>                          
+                            <tr>
+                                <td></td>
+                                <td>1000000010</td>
+                                <td>서비스 없음</td>
+                                <td>-</td>
+                                <td>test1234</td>
+                                <td>test1234</td>
+                                <td>통신사 고정 VPN</td>
+                                <td>1,000일 20시간 20분 20초</td>
+                                <td>-</td>
+                                <td>111.222.333.444</td>
+                                <td>
+                                    <div class="button-select">
+                                        <button type="button" class="icon-button">
+                                            <img src="/img/more.png" alt="more icon" class="before-img">
+                                            <img src="/img/more2.png" alt="more icon" class="after-img more-btn">
+                                        </button>
+                                        <div class="button-btn">
+                                            <button type="button" class="active4 service-date-btn">서비스 기간 변경</button>
+                                            <button type="button" class="service-date-btn2">서비스 기간 이전</button>
+                                            <button type="button" class="service-date-btn3">아이피 변경</button>
+                                        </div>   
+                                    </div>
+                                </td>
+                            </tr>  
+                            <tr>
+                                <td>
+                                    <div class="checkbox-table">
+                                        <input type="checkbox" id="check6">
+                                        <label for="check6"></label>
+                                    </div>
+                                </td>
+                                <td>1000000010</td>
+                                <td>사용중</td>
+                                <td>
+                                    <div class="start">
+                                        <p><span></span>접속중</p>
+                                    </div>
+                                </td>
+                                <td>test1234</td>
+                                <td>test1234</td>
+                                <td>통신사 고정 VPN</td>
+                                <td>1,000일 20시간 20분 20초</td>
+                                <td>2020-02-02 20:20:20 ~ 2020-02-02 20:20:20</td>
+                                <td>111.222.333.444</td>
+                                <td>
+                                    <div class="button-select">
+                                        <button type="button" class="icon-button">
+                                            <img src="/img/more.png" alt="more icon" class="before-img">
+                                            <img src="/img/more2.png" alt="more icon" class="after-img more-btn">
+                                        </button>
+                                        <div class="button-btn">
+                                            <button type="button" class="active4 service-date-btn">서비스 기간 변경</button>
+                                            <button type="button" class="service-date-btn2">서비스 기간 이전</button>
+                                            <button type="button" class="service-date-btn3">아이피 변경</button>
+                                        </div>   
+                                    </div>
+                                </td>
+                            </tr>  
+                            <tr>
+                                <td></td>
+                                <td>1000000010</td>
+                                <td>서비스 없음</td>
+                                <td>-</td>
+                                <td>test1234</td>
+                                <td>test1234</td>
+                                <td>통신사 고정 VPN</td>
+                                <td>1,000일 20시간 20분 20초</td>
+                                <td>-</td>
+                                <td>111.222.333.444</td>
+                                <td>
+                                    <div class="button-select">
+                                        <button type="button" class="icon-button">
+                                            <img src="/img/more.png" alt="more icon" class="before-img">
+                                            <img src="/img/more2.png" alt="more icon" class="after-img more-btn">
+                                        </button>
+                                        <div class="button-btn">
+                                            <button type="button" class="active4 service-date-btn">서비스 기간 변경</button>
+                                            <button type="button" class="service-date-btn2">서비스 기간 이전</button>
+                                            <button type="button" class="service-date-btn3">아이피 변경</button>
+                                        </div>    
+                                    </div>
+                                </td>
+                            </tr>                                                   
+                            <tr>
+                                <td></td>
+                                <td>1000000010</td>
+                                <td>서비스 없음</td>
+                                <td>-</td>
+                                <td>test1234</td>
+                                <td>test1234</td>
+                                <td>통신사 고정 VPN</td>
+                                <td>1,000일 20시간 20분 20초</td>
+                                <td>-</td>
+                                <td>111.222.333.444</td>
+                                <td>
+                                    <div class="button-select">
+                                        <button type="button" class="icon-button">
+                                            <img src="/img/more.png" alt="more icon" class="before-img">
+                                            <img src="/img/more2.png" alt="more icon" class="after-img more-btn">
+                                        </button>
+                                        <div class="button-btn">
+                                            <button type="button" class="active4 service-date-btn">서비스 기간 변경</button>
+                                            <button type="button" class="service-date-btn2">서비스 기간 이전</button>
+                                            <button type="button" class="service-date-btn3">아이피 변경</button>
+                                        </div>     
+                                    </div>
+                                </td>
+                            </tr>                                                   
+                            <tr>
+                                <td></td>
+                                <td>1000000010</td>
+                                <td>서비스 없음</td>
+                                <td>-</td>
+                                <td>test1234</td>
+                                <td>test1234</td>
+                                <td>통신사 고정 VPN</td>
+                                <td>1,000일 20시간 20분 20초</td>
+                                <td>-</td>
+                                <td>111.222.333.444</td>
+                                <td>
+                                    <div class="button-select">
+                                        <button type="button" class="icon-button">
+                                            <img src="/img/more.png" alt="more icon" class="before-img">
+                                            <img src="/img/more2.png" alt="more icon" class="after-img more-btn">
+                                        </button>
+                                        <div class="button-btn">
+                                            <button type="button" class="active4 service-date-btn">서비스 기간 변경</button>
+                                            <button type="button" class="service-date-btn2">서비스 기간 이전</button>
+                                            <button type="button" class="service-date-btn3">아이피 변경</button>
+                                        </div>    
+                                    </div>
+                                </td>
+                            </tr>  
+                            <tr class="cancellation">
+                                <td></td>
+                                <td>1000000010</td>
+                                <td>서비스 종료</td>
+                                <td>-</td>
+                                <td>test1234</td>
+                                <td>test1234</td>
+                                <td>통신사 고정 VPN</td>
+                                <td>1,000일 20시간 20분 20초</td>
+                                <td>2020-02-02 20:20:20 ~ 2020-02-02 20:20:20</td>
+                                <td>111.222.333.444</td>
+                                <td>
+                                    <div class="button-select">
+                                        <button type="button" class="icon-button">
+                                            <img src="/img/more.png" alt="more icon" class="before-img">
+                                            <img src="/img/more2.png" alt="more icon" class="after-img more-btn">
+                                        </button>
+                                        <div class="button-btn">
+                                            <button type="button" class="active4 service-date-btn">서비스 기간 변경</button>
+                                            <button type="button" class="service-date-btn2">서비스 기간 이전</button>
+                                            <button type="button" class="service-date-btn3">아이피 변경</button>
+                                        </div>   
+                                    </div>
+                                </td>
+                            </tr>  
+                            <tr>
+                                <td>
+                                    <div class="checkbox-table">
+                                        <input type="checkbox" id="check7">
+                                        <label for="check7"></label>
+                                    </div>
+                                </td>
+                                <td>1000000010</td>
+                                <td>사용중</td>
+                                <td>
+                                    <div class="start">
+                                        <p><span></span>접속중</p>
+                                    </div>
+                                </td>
+                                <td>test1234</td>
+                                <td>test1234</td>
+                                <td>통신사 고정 VPN</td>
+                                <td>1,000일 20시간 20분 20초</td>
+                                <td>2020-02-02 20:20:20 ~ 2020-02-02 20:20:20</td>
+                                <td>111.222.333.444</td>
+                                <td>
+                                    <div class="button-select">
+                                        <button type="button" class="icon-button">
+                                            <img src="/img/more.png" alt="more icon" class="before-img">
+                                            <img src="/img/more2.png" alt="more icon" class="after-img more-btn">
+                                        </button>
+                                        <div class="button-btn">
+                                            <button type="button" class="active4 service-date-btn">서비스 기간 변경</button>
+                                            <button type="button" class="service-date-btn2">서비스 기간 이전</button>
+                                            <button type="button" class="service-date-btn3">아이피 변경</button>
+                                        </div>    
+                                    </div>
+                                </td>
+                            </tr>                                                                                                         
+                            <tr>
+                                <td>
+                                    <div class="checkbox-table">
+                                        <input type="checkbox" id="check8">
+                                        <label for="check8"></label>
+                                    </div>
+                                </td>
+                                <td>1000000010</td>
+                                <td>사용중</td>
+                                <td>
+                                    <div class="end">
+                                        <p><span></span>접속 종료</p>
+                                    </div>
+                                </td>
+                                <td>test1234</td>
+                                <td>test1234</td>
+                                <td>통신사 고정 VPN</td>
+                                <td>1,000일 20시간 20분 20초</td>
+                                <td>2020-02-02 20:20:20 ~ 2020-02-02 20:20:20</td>
+                                <td>111.222.333.444</td>
+                                <td>
+                                    <div class="button-select">
+                                        <button type="button" class="icon-button">
+                                            <img src="/img/more.png" alt="more icon" class="before-img">
+                                            <img src="/img/more2.png" alt="more icon" class="after-img more-btn">
+                                        </button>
+                                        <div class="button-btn">
+                                            <button type="button" class="active4 service-date-btn">서비스 기간 변경</button>
+                                            <button type="button" class="service-date-btn2">서비스 기간 이전</button>
+                                            <button type="button" class="service-date-btn3">아이피 변경</button>
+                                        </div>     
+                                    </div>
+                                </td>
+                            </tr>                                                                                                         
+                        </tbody>
+                    </table>  
+                </div>
+                <div class="table-bottom">
+                    <div class="page-nav">
+                        <button type="button"><span>이미지</span></button>
+                        <button type="button"><span>이미지</span></button>
+                        <button type="button" class="active3">1</button>
+                        <button type="button" class="active3">2</button>
+                        <button type="button"><span>이미지</span></button>
+                        <button type="button"><span>이미지</span></button>
+                    </div>
+                    <div class="table-select-wrap">
+                        <div class="table-main-btn">
+                            <button type="button">10개씩 보기</button>
+                            <p><img src="/img/select-arrow.png" class="rotate-img2" alt="select arrow icon"></p>
+                        </div>
+                        <div class="table-select">
+                            <button type="button" class="active4">10개씩 보기</button>
+                            <button type="button">50개씩 보기</button>
+                            <button type="button">100개씩 보기</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="modal-popup-wrap">
+        <div class="modal-popup modal-popup3">
+            <div class="popup-title">서비스 기간 일괄 변경</div>
+            <div class="popup-inner">
+                <div class="popup-txt">
+                    선택한 <strong>10개</strong>의 서비스의 기간을 변경합니다. 
+                </div>
+                <div class="popup-table-contain">
+                    <div class="manage-table">
+                        <table class="three-table">
+                            <colgroup>
+                                <col style="width: 11%;">
+                                <col style="width: 16%;">
+                                <col style="width: 16%;">
+                                <col style="width: 16%;">
+                                <col style="width: 30%;">
+                                <col style="width: 11%;">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <td>번호</td>
+                                    <td>회원 아이디</td>
+                                    <td>서브 아이디</td>
+                                    <td>서비스 구분</td>
+                                    <td>서비스 기간</td>
+                                    <td>남은 일수</td>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                    <div class="manage-table manage-table-overflow">
+                        <table class="three-table">
+                            <colgroup>
+                                <col style="width: 11%;">
+                                <col style="width: 16%;">
+                                <col style="width: 16%;">
+                                <col style="width: 16%;">
+                                <col style="width: 30%;">
+                                <col style="width: 11%;">
+                            </colgroup>
+                            <tbody>
+                                <tr> 
+                                    <td>1000000010</td>
+                                    <td>test1234</td>
+                                    <td>test1234</td>
+                                    <td>통신사 고정 VPN</td>
+                                    <td>2023-02-28 11:26:06~<span class="bold-red">2023-02-28 11:26:06</span></td>
+                                    <td><span class="bold-red">150일</span></td>
+                                </tr>
+                                <tr> 
+                                    <td>1000000010</td>
+                                    <td>test1234</td>
+                                    <td>test1234</td>
+                                    <td>통신사 고정 VPN</td>
+                                    <td>2023-02-28 11:26:06~<span class="bold-red">2023-02-28 11:26:06</span></td>
+                                    <td><span class="bold-red">150일</span></td>
+                                </tr>
+                                <tr> 
+                                    <td>1000000010</td>
+                                    <td>test1234</td>
+                                    <td>test1234</td>
+                                    <td>통신사 고정 VPN</td>
+                                    <td>2023-02-28 11:26:06~<span class="bold-red">2023-02-28 11:26:06</span></td>
+                                    <td><span class="bold-red">150일</span></td>
+                                </tr>
+                                <tr> 
+                                    <td>1000000010</td>
+                                    <td>test1234</td>
+                                    <td>test1234</td>
+                                    <td>통신사 고정 VPN</td>
+                                    <td>2023-02-28 11:26:06~<span class="bold-red">2023-02-28 11:26:06</span></td>
+                                    <td><span class="bold-red">150일</span></td>
+                                </tr>
+                                <tr> 
+                                    <td>1000000010</td>
+                                    <td>test1234</td>
+                                    <td>test1234</td>
+                                    <td>통신사 고정 VPN</td>
+                                    <td>2023-02-28 11:26:06~<span class="bold-red">2023-02-28 11:26:06</span></td>
+                                    <td><span class="bold-red">150일</span></td>
+                                </tr>
+                                <tr> 
+                                    <td>1000000010</td>
+                                    <td>test1234</td>
+                                    <td>test1234</td>
+                                    <td>통신사 고정 VPN</td>
+                                    <td>2023-02-28 11:26:06~<span class="bold-red">2023-02-28 11:26:06</span></td>
+                                    <td><span class="bold-red">150일</span></td>
+                                </tr>
+                                <tr> 
+                                    <td>1000000010</td>
+                                    <td>test1234</td>
+                                    <td>test1234</td>
+                                    <td>통신사 고정 VPN</td>
+                                    <td>2023-02-28 11:26:06~<span class="bold-red">2023-02-28 11:26:06</span></td>
+                                    <td><span class="bold-red">150일</span></td>
+                                </tr>
+                                <tr> 
+                                    <td>1000000010</td>
+                                    <td>test1234</td>
+                                    <td>test1234</td>
+                                    <td>통신사 고정 VPN</td>
+                                    <td>2023-02-28 11:26:06~<span class="bold-red">2023-02-28 11:26:06</span></td>
+                                    <td><span class="bold-red">150일</span></td>
+                                </tr>
+                                <tr> 
+                                    <td>1000000010</td>
+                                    <td>test1234</td>
+                                    <td>test1234</td>
+                                    <td>통신사 고정 VPN</td>
+                                    <td>2023-02-28 11:26:06~<span class="bold-red">2023-02-28 11:26:06</span></td>
+                                    <td><span class="bold-red">150일</span></td>
+                                </tr>
+                                <tr> 
+                                    <td>1000000010</td>
+                                    <td>test1234</td>
+                                    <td>test1234</td>
+                                    <td>통신사 고정 VPN</td>
+                                    <td>2023-02-28 11:26:06~<span class="bold-red">2023-02-28 11:26:06</span></td>
+                                    <td><span class="bold-red">150일</span></td>
+                                </tr>
+                                <tr> 
+                                    <td>1000000010</td>
+                                    <td>test1234</td>
+                                    <td>test1234</td>
+                                    <td>통신사 고정 VPN</td>
+                                    <td>2023-02-28 11:26:06~<span class="bold-red">2023-02-28 11:26:06</span></td>
+                                    <td><span class="bold-red">150일</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="popup-inner-table">
+                    <table>
+                        <tr class="height-1">
+                            <td>
+                                <div class="title">변경 구분</div>
+                                <div class="inner-content">
+                                    <div class="program-table">
+                                        <div class="search-select-wrap">
+                                            <div class="search-main-btn">
+                                                <button type="button">지급</button>
+                                                <p><img src="/img/select2-arrow.png" class="rotate-img3" alt="select arrow icon"></p>
+                                            </div>
+                                            <div class="search-select2">
+                                                <button type="button" class="active4">지급</button>
+                                                <button type="button">차감</button>
+                                                <button type="button">종료</button>
+                                            </div> 
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr> 
+                        <tr class="height-1">
+                            <td>
+                                <div class="title">지급일</div>
+                                <div class="inner-content">
+                                    <input type="text" placeholder="지급일를(을) 입력하세요.">
+                                    <p>일</p>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="height-2">
+                            <td>
+                                <div class="title">변경 사유</div>
+                                <div class="inner-content">
+                                    <textarea name="" id="" cols="30" rows="10" placeholder="변경 사유를(을) 입력하세요." ></textarea>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="popup-btn-contain popup-btn-contain3">
+                    <div class="caution-txt">
+                        <img src="/img/caution.png" alt="icon">
+                        <p>균등 배분이란 : 각 서브 아이디가 사용중인 서비스의 남은 일수를 모두 합친 후 각 서브 아이디에 동일한 일수를 배분.</p>
+                    </div>
+                    <div class="popup-btn">
+                        <button type="button" class="pop-red-btn">확인</button>
+                        <button type="button" class="pop-border-btn">취소</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>     
+    <div class="modal-popup-wrap2">
+        <div class="modal-popup modal-popup3">
+            <div class="popup-title">서비스 기간 일괄 이전</div>
+            <div class="popup-inner">
+                <div class="popup-txt">
+                    선택한 <strong>10개</strong>의 서비스의 기간을 아래 서비스에 이전 합니다. 
+                </div>
+                <div class="popup-inner-table">
+                    <table>
+                        <tr class="height-1"> 
+                            <td>
+                                <div class="title">이전 유형</div> 
+                                <div class="inner-content">
+                                    <div class="radio">
+                                        <input type="radio" id="radio" name="option2" checked>
+                                        <label for="radio">전체 기간 이전</label>
+                                        <input type="radio" id="radio2" name="option2">
+                                        <label for="radio2">일부 기간 이전</label>
+                                    </div>      
+                                </div>
+                            </td>
+                        </tr> 
+                        <tr class="height-1">
+                            <td>
+                                <div class="title">대상 선택</div>
+                                <div class="inner-content">
+                                    <div class="program-table">
+                                        <div class="ip-ticket-btn ip-ticket-btn2">
+                                            <div class="target-search-wrap">
+                                                <div class="target-search">
+                                                    <img src="/img/search3.png" alt="icon">
+                                                    <input type="text" placeholder="서브 아이디를 선택 또는 검색하세요.">
+                                                </div>
+                                                <button type="button"><img src="/img/select2-arrow.png" class="img-rotate" alt="select arrow icon"></button>
+                                            </div>
+                                            <div class="target-select">
+                                                <div class="target-btn">
+                                                    <p class="active6">test1234</p>
+                                                    <ul>
+                                                        <li>통신사 고정 VPN</li>
+                                                        <li>2020-02-02 20:20:20 ~ 2020-02-02 20:20:20</li>
+                                                    </ul>
+                                                </div>
+                                                <div class="target-btn">
+                                                    <p>test1234</p>
+                                                    <ul>
+                                                        <li>통신사 고정 VPN</li>
+                                                        <li>2020-02-02 20:20:20 ~ 2020-02-02 20:20:20</li>
+                                                    </ul>
+                                                </div>
+                                                <div class="target-btn">
+                                                    <p>test1234</p>
+                                                    <ul>
+                                                        <li>통신사 고정 VPN</li>
+                                                        <li>2020-02-02 20:20:20 ~ 2020-02-02 20:20:20</li>
+                                                    </ul>
+                                                </div>
+                                                <div class="target-btn">
+                                                    <p>test1234</p>
+                                                    <ul>
+                                                        <li>통신사 고정 VPN</li>
+                                                        <li>2020-02-02 20:20:20 ~ 2020-02-02 20:20:20</li>
+                                                    </ul>
+                                                </div>
+                                                <div class="target-btn">
+                                                    <p>test1234</p>
+                                                    <ul>
+                                                        <li>통신사 고정 VPN</li>
+                                                        <li>2020-02-02 20:20:20 ~ 2020-02-02 20:20:20</li>
+                                                    </ul>
+                                                </div>
+                                            </div> 
+                                        </div>
+                                    </div>
+                                    <p>(남은 일수: -)</p>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="height-2">
+                            <td>
+                                <div class="title">변경 사유</div>
+                                <div class="inner-content">
+                                    <textarea name="" id="" cols="30" rows="10" placeholder="변경 사유를(을) 입력하세요." ></textarea>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div> 
+                <div class="popup-table-contain">
+                    <div class="manage-table">
+                        <table class="three-table">
+                            <colgroup>
+                                <col style="width: 10%;">
+                                <col style="width: 14%;">
+                                <col style="width: 14%;">
+                                <col style="width: 14%;">
+                                <col style="width: 30%;">
+                                <col style="width: 9%;">
+                                <col style="width: 9%;">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <td>번호</td>
+                                    <td>회원 아이디</td>
+                                    <td>서브 아이디</td>
+                                    <td>서비스 구분</td>
+                                    <td>서비스 기간</td>
+                                    <td>남은 일수</td>
+                                    <td>차감일</td>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                    <div class="manage-table manage-table-overflow">
+                        <table class="three-table">
+                            <colgroup>
+                                <col style="width: 10%;">
+                                <col style="width: 14%;">
+                                <col style="width: 14%;">
+                                <col style="width: 14%;">
+                                <col style="width: 30%;">
+                                <col style="width: 9%;">
+                                <col style="width: 9%;">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <td>1000000010</td>
+                                    <td>test1234</td>
+                                    <td>test1234</td>
+                                    <td>통신사 고정 VPN</td>
+                                    <td>2023-02-28 11:26:06~2023-02-28 11:26:06</td>
+                                    <td>150일</td>
+                                    <td>
+                                        <input type="text" class="day-deduction">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>1000000010</td>
+                                    <td>test1234</td>
+                                    <td>test1234</td>
+                                    <td>통신사 고정 VPN</td>
+                                    <td>2023-02-28 11:26:06~2023-02-28 11:26:06</td>
+                                    <td>150일</td>
+                                    <td>
+                                        <input type="text" class="day-deduction">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>1000000010</td>
+                                    <td>test1234</td>
+                                    <td>test1234</td>
+                                    <td>통신사 고정 VPN</td>
+                                    <td>2023-02-28 11:26:06~2023-02-28 11:26:06</td>
+                                    <td>150일</td>
+                                    <td>
+                                        <input type="text" class="day-deduction">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>1000000010</td>
+                                    <td>test1234</td>
+                                    <td>test1234</td>
+                                    <td>통신사 고정 VPN</td>
+                                    <td>2023-02-28 11:26:06~2023-02-28 11:26:06</td>
+                                    <td>150일</td>
+                                    <td>
+                                        <input type="text" class="day-deduction">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>1000000010</td>
+                                    <td>test1234</td>
+                                    <td>test1234</td>
+                                    <td>통신사 고정 VPN</td>
+                                    <td>2023-02-28 11:26:06~2023-02-28 11:26:06</td>
+                                    <td>150일</td>
+                                    <td>
+                                        <input type="text" class="day-deduction">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>1000000010</td>
+                                    <td>test1234</td>
+                                    <td>test1234</td>
+                                    <td>통신사 고정 VPN</td>
+                                    <td>2023-02-28 11:26:06~2023-02-28 11:26:06</td>
+                                    <td>150일</td>
+                                     <td>
+                                        <input type="text" class="day-deduction">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>1000000010</td>
+                                    <td>test1234</td>
+                                    <td>test1234</td>
+                                    <td>통신사 고정 VPN</td>
+                                    <td>2023-02-28 11:26:06~2023-02-28 11:26:06</td>
+                                    <td>150일</td>
+                                     <td>
+                                        <input type="text" class="day-deduction">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>1000000010</td>
+                                    <td>test1234</td>
+                                    <td>test1234</td>
+                                    <td>통신사 고정 VPN</td>
+                                    <td>2023-02-28 11:26:06~2023-02-28 11:26:06</td>
+                                    <td>150일</td>
+                                     <td>
+                                        <input type="text" class="day-deduction">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>1000000010</td>
+                                    <td>test1234</td>
+                                    <td>test1234</td>
+                                    <td>통신사 고정 VPN</td>
+                                    <td>2023-02-28 11:26:06~2023-02-28 11:26:06</td>
+                                    <td>150일</td>
+                                     <td>
+                                        <input type="text" class="day-deduction">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>1000000010</td>
+                                    <td>test1234</td>
+                                    <td>test1234</td>
+                                    <td>통신사 고정 VPN</td>
+                                    <td>2023-02-28 11:26:06~2023-02-28 11:26:06</td>
+                                    <td>150일</td>
+                                     <td>
+                                        <input type="text" class="day-deduction">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>1000000010</td>
+                                    <td>test1234</td>
+                                    <td>test1234</td>
+                                    <td>통신사 고정 VPN</td>
+                                    <td>2023-02-28 11:26:06~2023-02-28 11:26:06</td>
+                                    <td>150일</td>
+                                     <td>
+                                        <input type="text" class="day-deduction">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="popup-btn-contain popup-btn-contain3">
+                    <div class="caution-txt">
+                        <img src="/img/caution.png" alt="icon">
+                        <p>
+                            전체 기간 이전 : 이전할 서비스의 남은 기간 전체를 합산하여 하나의 서비스에 지급한다. <br>
+                            일부 기간 이전 : 이전할 서비스들에 차감일을 각각 설정 후 합산하여 하나의 서비스에 지급한다.
+                        </p>
+                    </div>
+                    <div class="popup-btn">
+                        <button type="button" class="pop-red-btn">확인</button>
+                        <button type="button" class="pop-border-btn">취소</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-popup-wrap3">
+        <div class="modal-popup modal-popup3">
+            <div class="popup-title">서비스 기간 일괄 이전</div>    
+            <div class="popup-inner">
+                <div class="popup-txt">
+                    선택한 <strong>0개</strong>의 서비스의 기간을 <strong>‘test1234’</strong> 서비스에 성공적으로 이전하였습니다.
+                </div>
+                <div class="popup-table-contain">
+                    <div class="pop-table-title">이전한 서비스</div>
+                    <div class="manage-table">
+                        <table class="three-table">
+                            <colgroup>
+                                <col style="width: 10%;">
+                                <col style="width: 14%;">
+                                <col style="width: 14%;">
+                                <col style="width: 14%;">
+                                <col style="width: 30%;">
+                                <col style="width: 9%;">
+                                <col style="width: 9%;">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <td>번호</td>
+                                    <td>회원 아이디</td>
+                                    <td>서브 아이디</td>
+                                    <td>서비스 구분</td>
+                                    <td>서비스 기간</td>
+                                    <td>차감일</td>
+                                    <td>남은 일수</td>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                    <div class="manage-table manage-table-overflow">
+                        <table class="three-table">
+                            <colgroup>
+                                <col style="width: 10%;">
+                                <col style="width: 14%;">
+                                <col style="width: 14%;">
+                                <col style="width: 14%;">
+                                <col style="width: 30%;">
+                                <col style="width: 9%;">
+                                <col style="width: 9%;">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <td>1000000005</td>
+                                    <td>test1234</td>
+                                    <td>test1234</td>
+                                    <td>통신사 고정 VPN</td>
+                                    <td>2023-02-28 11:26:06~<span class="bold-red">2023-02-28 11:26:06</span></td>
+                                    <td><span class="bold-red">30일</span></td>
+                                    <td><span class="bold-red">0일</span></td>
+                                </tr>
+                                <tr>
+                                    <td>1000000005</td>
+                                    <td>test1234</td>
+                                    <td>test1234</td>
+                                    <td>통신사 고정 VPN</td>
+                                    <td>2023-02-28 11:26:06~<span class="bold-red">2023-02-28 11:26:06</span></td>
+                                    <td><span class="bold-red">30일</span></td>
+                                    <td><span class="bold-red">0일</span></td>
+                                </tr>
+                                <tr>
+                                    <td>1000000005</td>
+                                    <td>test1234</td>
+                                    <td>test1234</td>
+                                    <td>통신사 고정 VPN</td>
+                                    <td>2023-02-28 11:26:06~<span class="bold-red">2023-02-28 11:26:06</span></td>
+                                    <td><span class="bold-red">30일</span></td>
+                                    <td><span class="bold-red">0일</span></td>
+                                </tr>
+                                <tr>
+                                    <td>1000000005</td>
+                                    <td>test1234</td>
+                                    <td>test1234</td>
+                                    <td>통신사 고정 VPN</td>
+                                    <td>2023-02-28 11:26:06~<span class="bold-red">2023-02-28 11:26:06</span></td>
+                                    <td><span class="bold-red">30일</span></td>
+                                    <td><span class="bold-red">0일</span></td>
+                                </tr>
+                                <tr>
+                                    <td>1000000005</td>
+                                    <td>test1234</td>
+                                    <td>test1234</td>
+                                    <td>통신사 고정 VPN</td>
+                                    <td>2023-02-28 11:26:06~<span class="bold-red">2023-02-28 11:26:06</span></td>
+                                    <td><span class="bold-red">30일</span></td>
+                                    <td><span class="bold-red">0일</span></td>
+                                </tr>
+                                <tr>
+                                    <td>1000000005</td>
+                                    <td>test1234</td>
+                                    <td>test1234</td>
+                                    <td>통신사 고정 VPN</td>
+                                    <td>2023-02-28 11:26:06~<span class="bold-red">2023-02-28 11:26:06</span></td>
+                                    <td><span class="bold-red">30일</span></td>
+                                    <td><span class="bold-red">0일</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="popup-table-contain">
+                    <div class="pop-table-title">이전 받은 서비스</div>
+                    <div class="manage-table">
+                        <table class="three-table">
+                            <colgroup>
+                                <col style="width: 10%;">
+                                <col style="width: 14%;">
+                                <col style="width: 14%;">
+                                <col style="width: 14%;">
+                                <col style="width: 30%;">
+                                <col style="width: 9%;">
+                                <col style="width: 9%;">
+                            </colgroup>    
+                            <thead>
+                                <tr>
+                                    <td>번호</td>
+                                    <td>회원 아이디</td>
+                                    <td>서브 아이디</td>
+                                    <td>서비스 구분</td>
+                                    <td>서비스 기간</td>
+                                    <td>차감일</td>
+                                    <td>남은 일수</td>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                    <div class="manage-table manage-table-overflow">
+                        <table class="three-table">
+                            <colgroup>
+                                <col style="width: 10%;">
+                                <col style="width: 14%;">
+                                <col style="width: 14%;">
+                                <col style="width: 14%;">
+                                <col style="width: 30%;">
+                                <col style="width: 9%;">
+                                <col style="width: 9%;">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <td>1000000005</td>
+                                    <td>test1234</td>
+                                    <td>test1234</td>
+                                    <td>통신사 고정 VPN</td>
+                                    <td>2023-02-28 11:26:06~<span class="bold-blue">2023-02-28 11:26:06</span></td>
+                                    <td><span class="bold-blue">6일</span></td>
+                                    <td><span class="bold-blue">156일</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="popup-btn-contain popup-btn-contain2">
+                    <div class="popup-btn">
+                        <button type="button" class="pop-red-btn">확인</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-popup-wrap4">
+        <div class="modal-popup modal-popup3">
+            <div class="popup-title">서비스 기간 일괄 변경</div>
+            <div class="popup-inner">
+                <div class="popup-txt">
+                    선택한 <strong>10개</strong>의 서비스의 기간을 성공적으로 변경하였습니다. 
+                </div>
+                <div class="popup-table-contain">
+                    <div class="manage-table">
+                        <table class="three-table">
+                            <colgroup>
+                                <col style="width: 11%;">
+                                <col style="width: 16%;">
+                                <col style="width: 16%;">
+                                <col style="width: 16%;">
+                                <col style="width: 30%;">
+                                <col style="width: 11%;">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <td>번호</td>
+                                    <td>회원 아이디</td>
+                                    <td>서브 아이디</td>
+                                    <td>서비스 구분</td>
+                                    <td>서비스 기간</td>
+                                    <td>남은 일수</td>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                    <div class="manage-table manage-table-overflow">
+                        <table class="three-table">
+                            <colgroup>
+                                <col style="width: 11%;">
+                                <col style="width: 16%;">
+                                <col style="width: 16%;">
+                                <col style="width: 16%;">
+                                <col style="width: 30%;">
+                                <col style="width: 11%;">
+                            </colgroup>
+                            <tbody>
+                                <tr> 
+                                    <td>1000000010</td>
+                                    <td>test1234</td>
+                                    <td>test1234</td>
+                                    <td>통신사 고정 VPN</td>
+                                    <td>2023-02-28 11:26:06~<span class="bold-red">2023-02-28 11:26:06</span></td>
+                                    <td><span class="bold-red">150일</span></td>
+                                </tr>
+                                <tr> 
+                                    <td>1000000010</td>
+                                    <td>test1234</td>
+                                    <td>test1234</td>
+                                    <td>통신사 고정 VPN</td>
+                                    <td>2023-02-28 11:26:06~<span class="bold-red">2023-02-28 11:26:06</span></td>
+                                    <td><span class="bold-red">150일</span></td>
+                                </tr>
+                                <tr> 
+                                    <td>1000000010</td>
+                                    <td>test1234</td>
+                                    <td>test1234</td>
+                                    <td>통신사 고정 VPN</td>
+                                    <td>2023-02-28 11:26:06~<span class="bold-red">2023-02-28 11:26:06</span></td>
+                                    <td><span class="bold-red">150일</span></td>
+                                </tr>
+                                <tr> 
+                                    <td>1000000010</td>
+                                    <td>test1234</td>
+                                    <td>test1234</td>
+                                    <td>통신사 고정 VPN</td>
+                                    <td>2023-02-28 11:26:06~<span class="bold-red">2023-02-28 11:26:06</span></td>
+                                    <td><span class="bold-red">150일</span></td>
+                                </tr>
+                                <tr> 
+                                    <td>1000000010</td>
+                                    <td>test1234</td>
+                                    <td>test1234</td>
+                                    <td>통신사 고정 VPN</td>
+                                    <td>2023-02-28 11:26:06~<span class="bold-red">2023-02-28 11:26:06</span></td>
+                                    <td><span class="bold-red">150일</span></td>
+                                </tr>
+                                <tr> 
+                                    <td>1000000010</td>
+                                    <td>test1234</td>
+                                    <td>test1234</td>
+                                    <td>통신사 고정 VPN</td>
+                                    <td>2023-02-28 11:26:06~<span class="bold-red">2023-02-28 11:26:06</span></td>
+                                    <td><span class="bold-red">150일</span></td>
+                                </tr>
+                                <tr> 
+                                    <td>1000000010</td>
+                                    <td>test1234</td>
+                                    <td>test1234</td>
+                                    <td>통신사 고정 VPN</td>
+                                    <td>2023-02-28 11:26:06~<span class="bold-red">2023-02-28 11:26:06</span></td>
+                                    <td><span class="bold-red">150일</span></td>
+                                </tr>
+                                <tr> 
+                                    <td>1000000010</td>
+                                    <td>test1234</td>
+                                    <td>test1234</td>
+                                    <td>통신사 고정 VPN</td>
+                                    <td>2023-02-28 11:26:06~<span class="bold-red">2023-02-28 11:26:06</span></td>
+                                    <td><span class="bold-red">150일</span></td>
+                                </tr>
+                                <tr> 
+                                    <td>1000000010</td>
+                                    <td>test1234</td>
+                                    <td>test1234</td>
+                                    <td>통신사 고정 VPN</td>
+                                    <td>2023-02-28 11:26:06~<span class="bold-red">2023-02-28 11:26:06</span></td>
+                                    <td><span class="bold-red">150일</span></td>
+                                </tr>
+                                <tr> 
+                                    <td>1000000010</td>
+                                    <td>test1234</td>
+                                    <td>test1234</td>
+                                    <td>통신사 고정 VPN</td>
+                                    <td>2023-02-28 11:26:06~<span class="bold-red">2023-02-28 11:26:06</span></td>
+                                    <td><span class="bold-red">150일</span></td>
+                                </tr>
+                                <tr> 
+                                    <td>1000000010</td>
+                                    <td>test1234</td>
+                                    <td>test1234</td>
+                                    <td>통신사 고정 VPN</td>
+                                    <td>2023-02-28 11:26:06~<span class="bold-red">2023-02-28 11:26:06</span></td>
+                                    <td><span class="bold-red">150일</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="popup-btn-contain popup-btn-contain2">
+                    <div class="popup-btn">
+                        <button type="button" class="pop-red-btn">확인</button>
+                        <button type="button" class="pop-border-btn">취소</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>     
+    <div class="modal-popup-wrap5">
+        <div class="modal-popup modal-popup3">
+            <div class="popup-title">서비스 기간 일괄 이전</div>    
+            <div class="popup-inner">
+                <div class="popup-txt">
+                    선택한 <strong>0개</strong>의 서비스의 기간을 <strong>‘test1234’</strong> 서비스에 성공적으로 이전하였습니다.
+                </div>
+                <div class="popup-table-contain">
+                    <div class="pop-table-title">이전한 서비스</div>
+                    <div class="manage-table">
+                        <table class="three-table">
+                            <colgroup>
+                                <col style="width: 10%;">
+                                <col style="width: 14%;">
+                                <col style="width: 14%;">
+                                <col style="width: 14%;">
+                                <col style="width: 30%;">
+                                <col style="width: 9%;">
+                                <col style="width: 9%;">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <td>번호</td>
+                                    <td>회원 아이디</td>
+                                    <td>서브 아이디</td>
+                                    <td>서비스 구분</td>
+                                    <td>서비스 기간</td>
+                                    <td>차감일</td>
+                                    <td>남은 일수</td>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                    <div class="manage-table manage-table-overflow">
+                        <table class="three-table">
+                            <colgroup>
+                                <col style="width: 10%;">
+                                <col style="width: 14%;">
+                                <col style="width: 14%;">
+                                <col style="width: 14%;">
+                                <col style="width: 30%;">
+                                <col style="width: 9%;">
+                                <col style="width: 9%;">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <td>1000000005</td>
+                                    <td>test1234</td>
+                                    <td>test1234</td>
+                                    <td>통신사 고정 VPN</td>
+                                    <td>2023-02-28 11:26:06~<span class="bold-red">2023-02-28 11:26:06</span></td>
+                                    <td><span class="bold-red">30일</span></td>
+                                    <td><span class="bold-red">0일</span></td>
+                                </tr>
+                                <tr>
+                                    <td>1000000005</td>
+                                    <td>test1234</td>
+                                    <td>test1234</td>
+                                    <td>통신사 고정 VPN</td>
+                                    <td>2023-02-28 11:26:06~<span class="bold-red">2023-02-28 11:26:06</span></td>
+                                    <td><span class="bold-red">30일</span></td>
+                                    <td><span class="bold-red">0일</span></td>
+                                </tr>
+                                <tr>
+                                    <td>1000000005</td>
+                                    <td>test1234</td>
+                                    <td>test1234</td>
+                                    <td>통신사 고정 VPN</td>
+                                    <td>2023-02-28 11:26:06~<span class="bold-red">2023-02-28 11:26:06</span></td>
+                                    <td><span class="bold-red">30일</span></td>
+                                    <td><span class="bold-red">0일</span></td>
+                                </tr>
+                                <tr>
+                                    <td>1000000005</td>
+                                    <td>test1234</td>
+                                    <td>test1234</td>
+                                    <td>통신사 고정 VPN</td>
+                                    <td>2023-02-28 11:26:06~<span class="bold-red">2023-02-28 11:26:06</span></td>
+                                    <td><span class="bold-red">30일</span></td>
+                                    <td><span class="bold-red">0일</span></td>
+                                </tr>
+                                <tr>
+                                    <td>1000000005</td>
+                                    <td>test1234</td>
+                                    <td>test1234</td>
+                                    <td>통신사 고정 VPN</td>
+                                    <td>2023-02-28 11:26:06~<span class="bold-red">2023-02-28 11:26:06</span></td>
+                                    <td><span class="bold-red">30일</span></td>
+                                    <td><span class="bold-red">0일</span></td>
+                                </tr>
+                                <tr>
+                                    <td>1000000005</td>
+                                    <td>test1234</td>
+                                    <td>test1234</td>
+                                    <td>통신사 고정 VPN</td>
+                                    <td>2023-02-28 11:26:06~<span class="bold-red">2023-02-28 11:26:06</span></td>
+                                    <td><span class="bold-red">30일</span></td>
+                                    <td><span class="bold-red">0일</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="popup-table-contain">
+                    <div class="pop-table-title">이전 받은 서비스</div>
+                    <div class="manage-table">
+                        <table class="three-table">
+                            <colgroup>
+                                <col style="width: 10%;">
+                                <col style="width: 14%;">
+                                <col style="width: 14%;">
+                                <col style="width: 14%;">
+                                <col style="width: 30%;">
+                                <col style="width: 9%;">
+                                <col style="width: 9%;">
+                            </colgroup>    
+                            <thead>
+                                <tr>
+                                    <td>번호</td>
+                                    <td>회원 아이디</td>
+                                    <td>서브 아이디</td>
+                                    <td>서비스 구분</td>
+                                    <td>서비스 기간</td>
+                                    <td>차감일</td>
+                                    <td>남은 일수</td>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                    <div class="manage-table manage-table-overflow">
+                        <table class="three-table">
+                            <colgroup>
+                                <col style="width: 10%;">
+                                <col style="width: 14%;">
+                                <col style="width: 14%;">
+                                <col style="width: 14%;">
+                                <col style="width: 30%;">
+                                <col style="width: 9%;">
+                                <col style="width: 9%;">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <td>1000000005</td>
+                                    <td>test1234</td>
+                                    <td>test1234</td>
+                                    <td>통신사 고정 VPN</td>
+                                    <td>2023-02-28 11:26:06~<span class="bold-blue">2023-02-28 11:26:06</span></td>
+                                    <td><span class="bold-blue">6일</span></td>
+                                    <td><span class="bold-blue">156일</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="popup-btn-contain popup-btn-contain2">
+                    <div class="popup-btn">
+                        <button type="button" class="pop-red-btn">확인</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    
+    <div class="modal-popup-wrap6">
+        <div class="modal-popup modal-popup2">
+            <div class="popup-title">서비스 기간 단일 변경</div>
+            <div class="popup-inner">
+                <div class="popup-txt">
+                    <strong>‘test1234’</strong>의 서비스 기간을 변경하시겠습니까?
+                </div>
+                <div class="popup-inner-table">
+                    <table>
+                        <tr class="height-1">
+                            <td>
+                                <div class="title">변경 구분</div>
+                                <div class="inner-content">
+                                    <div class="program-table">
+                                        <div class="search-select-wrap">
+                                            <div class="search-main-btn">
+                                                <button type="button">지급</button>
+                                                <p><img src="/img/select2-arrow.png" class="rotate-img" alt="select arrow icon"></p>
+                                            </div>
+                                            <div class="search-select2">
+                                                <button type="button" class="active4">지급</button>
+                                                <button type="button">차감</button>
+                                                <button type="button">종료</button>
+                                            </div> 
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="height-1">
+                            <td>
+                                <div class="title">지급일</div>
+                                <div class="inner-content">
+                                    <input type="text" placeholder="지급일를(을) 입력하세요.">
+                                    <p>일</p>
+                                    <p>(남은 일수 : 150일)</p>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="height-2">
+                            <td>
+                                <div class="title">변경 사유</div>
+                                <div class="inner-content">
+                                    <textarea name="" id="" cols="30" rows="10" placeholder="변경 사유를(을) 입력하세요." ></textarea>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="popup-btn-contain popup-btn-contain2">
+                    <div class="popup-btn">
+                        <button type="button" class="pop-red-btn">확인</button>
+                        <button type="button" class="pop-border-btn">취소</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-popup-wrap7">
+        <div class="modal-popup modal-popup3">
+            <div class="popup-title">서비스 기간 이전</div>
+            <div class="popup-inner">
+                <div class="popup-txt">
+                    <strong>‘test1234’</strong>의 서비스 기간을 선택한 <strong>10개</strong>의 서비스에 이전합니다.
+                </div>
+                <div class="popup-table-contain">
+                    <div class="manage-table">
+                        <table class="three-table">
+                            <colgroup>
+                                <col style="width: 5%;">
+                                <col style="width: 11%;">
+                                <col style="width: 14%;">
+                                <col style="width: 14%;">
+                                <col style="width: 14%;">
+                                <col style="width: 30%;">
+                                <col style="width: 12%;">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox-cc">
+                                            <input type="checkbox" id="cc2">
+                                            <label for="cc2"></label>
+                                        </div>
+                                    </td>
+                                    <td>번호</td>
+                                    <td>회원 아이디</td>
+                                    <td>서브 아이디</td>
+                                    <td>서비스 구분</td>
+                                    <td>서비스 기간</td>
+                                    <td>남은 일수</td>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                    <div class="manage-table manage-table-overflow">
+                        <table class="three-table">
+                            <colgroup>
+                                <col style="width: 5%;">
+                                <col style="width: 11%;">
+                                <col style="width: 14%;">
+                                <col style="width: 14%;">
+                                <col style="width: 14%;">
+                                <col style="width: 30%;">
+                                <col style="width: 12%;">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox-table">
+                                            <input type="checkbox" id="check9">
+                                            <label for="check9"></label>
+                                        </div>
+                                    </td> 
+                                    <td>1000000010</td>
+                                    <td>test1234</td>
+                                    <td>test1234</td>
+                                    <td>통신사 고정 VPN</td>
+                                    <td>2023-02-28 11:26:06~2023-02-28 11:26:06</td>
+                                    <td>150일</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox-table">
+                                            <input type="checkbox" id="check10">
+                                            <label for="check10"></label>
+                                        </div>
+                                    </td> 
+                                    <td>1000000010</td>
+                                    <td>test1234</td>
+                                    <td>test1234</td>
+                                    <td>통신사 고정 VPN</td>
+                                    <td>2023-02-28 11:26:06~2023-02-28 11:26:06</td>
+                                    <td>150일</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox-table">
+                                            <input type="checkbox" id="check11">
+                                            <label for="check11"></label>
+                                        </div>
+                                    </td> 
+                                    <td>1000000010</td>
+                                    <td>test1234</td>
+                                    <td>test1234</td>
+                                    <td>통신사 고정 VPN</td>
+                                    <td>2023-02-28 11:26:06~2023-02-28 11:26:06</td>
+                                    <td>150일</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox-table">
+                                            <input type="checkbox" id="check12">
+                                            <label for="check12"></label>
+                                        </div>
+                                    </td> 
+                                    <td>1000000010</td>
+                                    <td>test1234</td>
+                                    <td>test1234</td>
+                                    <td>통신사 고정 VPN</td>
+                                    <td>2023-02-28 11:26:06~2023-02-28 11:26:06</td>
+                                    <td>150일</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox-table">
+                                            <input type="checkbox" id="check13">
+                                            <label for="check13"></label>
+                                        </div>
+                                    </td> 
+                                    <td>1000000010</td>
+                                    <td>test1234</td>
+                                    <td>test1234</td>
+                                    <td>통신사 고정 VPN</td>
+                                    <td>2023-02-28 11:26:06~2023-02-28 11:26:06</td>
+                                    <td>150일</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox-table">
+                                            <input type="checkbox" id="check14">
+                                            <label for="check14"></label>
+                                        </div>
+                                    </td> 
+                                    <td>1000000010</td>
+                                    <td>test1234</td>
+                                    <td>test1234</td>
+                                    <td>통신사 고정 VPN</td>
+                                    <td>2023-02-28 11:26:06~2023-02-28 11:26:06</td>
+                                    <td>150일</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox-table">
+                                            <input type="checkbox" id="check15">
+                                            <label for="check15"></label>
+                                        </div>
+                                    </td> 
+                                    <td>1000000010</td>
+                                    <td>test1234</td>
+                                    <td>test1234</td>
+                                    <td>통신사 고정 VPN</td>
+                                    <td>2023-02-28 11:26:06~2023-02-28 11:26:06</td>
+                                    <td>150일</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox-table">
+                                            <input type="checkbox" id="check16">
+                                            <label for="check16"></label>
+                                        </div>
+                                    </td> 
+                                    <td>1000000010</td>
+                                    <td>test1234</td>
+                                    <td>test1234</td>
+                                    <td>통신사 고정 VPN</td>
+                                    <td>2023-02-28 11:26:06~2023-02-28 11:26:06</td>
+                                    <td>150일</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox-table">
+                                            <input type="checkbox" id="check17">
+                                            <label for="check17"></label>
+                                        </div>
+                                    </td> 
+                                    <td>1000000010</td>
+                                    <td>test1234</td>
+                                    <td>test1234</td>
+                                    <td>통신사 고정 VPN</td>
+                                    <td>2023-02-28 11:26:06~2023-02-28 11:26:06</td>
+                                    <td>150일</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox-table">
+                                            <input type="checkbox" id="check18">
+                                            <label for="check18"></label>
+                                        </div>
+                                    </td> 
+                                    <td>1000000010</td>
+                                    <td>test1234</td>
+                                    <td>test1234</td>
+                                    <td>통신사 고정 VPN</td>
+                                    <td>2023-02-28 11:26:06~2023-02-28 11:26:06</td>
+                                    <td>150일</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox-table">
+                                            <input type="checkbox" id="check19">
+                                            <label for="check19"></label>
+                                        </div>
+                                    </td> 
+                                    <td>1000000010</td>
+                                    <td>test1234</td>
+                                    <td>test1234</td>
+                                    <td>통신사 고정 VPN</td>
+                                    <td>2023-02-28 11:26:06~2023-02-28 11:26:06</td>
+                                    <td>150일</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="popup-inner-table">
+                    <table>
+                        <tr class="height-1">
+                            <td>
+                                <div class="title">이전 유형</div>
+                                <div class="inner-content">
+                                    <div class="radio">
+                                        <input type="radio" id="radio" name="option3" checked>
+                                        <label for="radio">전체 기간 이전</label>
+                                        <input type="radio" id="radio2" name="option3">
+                                        <label for="radio2">일부 기간 이전</label>
+                                    </div>      
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="height-1">
+                            <td>
+                                <div class="title">지급일</div>
+                                <div class="inner-content">
+                                    <p>150 일</p>
+                                </div> 
+                            </td>
+                        </tr>
+                        <tr class="height-2">
+                            <td>
+                                <div class="title">변경 사유</div>
+                                <div class="inner-content">
+                                    <textarea name="" id="" cols="30" rows="10" placeholder="변경 사유를(을) 입력하세요." ></textarea>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div> 
+                <div class="popup-btn-contain popup-btn-contain3">
+                    <div class="caution-txt">
+                        <img src="/img/caution.png" alt="icon">
+                        <p>
+                            전체 기간 이전 : 이전할 서비스가 가진 기간을 모두 사용하여 각 서비스에 동일한 일수를 지급한다. <br>
+                            일부 기간 이전 : 이전할 서비스가 가진 기간 중 원하는 일수만큼을 빼어 각 서비스에 동일한 일수를 지급한다.
+                        </p>
+                    </div>
+                    <div class="popup-btn">
+                        <button type="button" class="pop-red-btn">확인</button>
+                        <button type="button" class="pop-border-btn">취소</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>  
+    <div class="modal-popup-wrap8">
+        <div class="modal-popup modal-popup2">
+            <div class="popup-title">아이피 변경</div>
+            <div class="popup-inner">
+                <div class="popup-txt">
+                    <strong>‘test1234’</strong>의 아이피를 변경하시겠습니까?
+                </div>
+                <div class="popup-inner-table">
+                    <table>
+                        <tr class="height-1">
+                            <td>
+                                <div class="title">수동 / 랜덤</div>
+                                <div class="inner-content">
+                                    <div class="radio">
+                                        <input type="radio" id="radio" name="option4" checked>
+                                        <label for="radio">수동</label>
+                                        <input type="radio" id="radio2" name="option4">
+                                        <label for="radio2">랜덤</label>
+                                    </div>      
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="height-1">
+                            <td>
+                                <div class="title">아이피</div>
+                                <div class="inner-content inner-content2">
+                                    <input type="text" placeholder="아이피를(을) 입력하세요.">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="height-2">
+                            <td>
+                                <div class="title">변경 사유</div>
+                                <div class="inner-content">
+                                    <textarea name="" id="" cols="30" rows="10" placeholder="변경 사유를(을) 입력하세요." ></textarea>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="popup-btn-contain popup-btn-contain2">
+                    <div class="popup-btn">
+                        <button type="button" class="pop-red-btn">확인</button>
+                        <button type="button" class="pop-border-btn">취소</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-popup-wrap9">
+        <div class="modal-popup modal-popup3">
+            <div class="popup-title">서비스 기간 이전</div>
+            <div class="popup-inner">
+                <div class="popup-txt">
+                    <strong>‘test1234’</strong>의 서비스 기간을 선택한 <strong>10개</strong>의 서비스에 성공적으로 이전하였습니다.
+                </div>
+                <div class="popup-table-contain">
+                    <div class="pop-table-title">이전한 서비스</div>
+                    <div class="manage-table">
+                        <table class="three-table">
+                            <colgroup>
+                                <col style="width: 10%;">
+                                <col style="width: 14%;">
+                                <col style="width: 14%;">
+                                <col style="width: 14%;">
+                                <col style="width: 30%;">
+                                <col style="width: 9%;">
+                                <col style="width: 9%;">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <td>번호</td>
+                                    <td>회원 아이디</td>
+                                    <td>서브 아이디</td>
+                                    <td>서비스 구분</td>
+                                    <td>서비스 기간</td>
+                                    <td>차감일</td>
+                                    <td>남은 일수</td>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                    <div class="manage-table manage-table-overflow">
+                        <table class="three-table">
+                            <colgroup>
+                                <col style="width: 10%;">
+                                <col style="width: 14%;">
+                                <col style="width: 14%;">
+                                <col style="width: 14%;">
+                                <col style="width: 30%;">
+                                <col style="width: 9%;">
+                                <col style="width: 9%;">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>test1234</td>
+                                    <td>test1234</td>
+                                    <td>통신사 고정 VPN</td>
+                                    <td>2023-02-28 11:26:06~<span class="bold-red">2023-02-28 11:26:06</span></td>
+                                    <td><span class="bold-red">30일</span></td>
+                                    <td><span class="bold-red">0일</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="popup-table-contain">
+                    <div class="pop-table-title">이전 받은 서비스</div>
+                    <div class="manage-table">
+                        <table class="three-table">
+                            <colgroup>
+                                <col style="width: 10%;">
+                                <col style="width: 14%;">
+                                <col style="width: 14%;">
+                                <col style="width: 14%;">
+                                <col style="width: 30%;">
+                                <col style="width: 9%;">
+                                <col style="width: 9%;">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <td>번호</td>
+                                    <td>회원 아이디</td>
+                                    <td>서브 아이디</td>
+                                    <td>서비스 구분</td>
+                                    <td>서비스 기간</td>
+                                    <td>차감일</td>
+                                    <td>남은 일수</td>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                    <div class="manage-table manage-table-overflow">
+                        <table class="three-table">
+                            <colgroup>
+                                <col style="width: 10%;">
+                                <col style="width: 14%;">
+                                <col style="width: 14%;">
+                                <col style="width: 14%;">
+                                <col style="width: 30%;">
+                                <col style="width: 9%;">
+                                <col style="width: 9%;">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <td>1000000005</td>
+                                    <td>test1234</td>
+                                    <td>test1234</td>
+                                    <td>통신사 고정 VPN</td>
+                                    <td>2023-02-28 11:26:06~<span class="bold-blue">2023-02-28 11:26:06</span></td>
+                                    <td><span class="bold-blue">6일</span></td>
+                                    <td><span class="bold-blue">156일</span></td>
+                                </tr>
+                                <tr>
+                                    <td>1000000005</td>
+                                    <td>test1234</td>
+                                    <td>test1234</td>
+                                    <td>통신사 고정 VPN</td>
+                                    <td>2023-02-28 11:26:06~<span class="bold-blue">2023-02-28 11:26:06</span></td>
+                                    <td><span class="bold-blue">6일</span></td>
+                                    <td><span class="bold-blue">156일</span></td>
+                                </tr>
+                                <tr>
+                                    <td>1000000005</td>
+                                    <td>test1234</td>
+                                    <td>test1234</td>
+                                    <td>통신사 고정 VPN</td>
+                                    <td>2023-02-28 11:26:06~<span class="bold-blue">2023-02-28 11:26:06</span></td>
+                                    <td><span class="bold-blue">6일</span></td>
+                                    <td><span class="bold-blue">156일</span></td>
+                                </tr>
+                                <tr>
+                                    <td>1000000005</td>
+                                    <td>test1234</td>
+                                    <td>test1234</td>
+                                    <td>통신사 고정 VPN</td>
+                                    <td>2023-02-28 11:26:06~<span class="bold-blue">2023-02-28 11:26:06</span></td>
+                                    <td><span class="bold-blue">6일</span></td>
+                                    <td><span class="bold-blue">156일</span></td>
+                                </tr>
+                                <tr>
+                                    <td>1000000005</td>
+                                    <td>test1234</td>
+                                    <td>test1234</td>
+                                    <td>통신사 고정 VPN</td>
+                                    <td>2023-02-28 11:26:06~<span class="bold-blue">2023-02-28 11:26:06</span></td>
+                                    <td><span class="bold-blue">6일</span></td>
+                                    <td><span class="bold-blue">156일</span></td>
+                                </tr>
+                                <tr>
+                                    <td>1000000005</td>
+                                    <td>test1234</td>
+                                    <td>test1234</td>
+                                    <td>통신사 고정 VPN</td>
+                                    <td>2023-02-28 11:26:06~<span class="bold-blue">2023-02-28 11:26:06</span></td>
+                                    <td><span class="bold-blue">6일</span></td>
+                                    <td><span class="bold-blue">156일</span></td>
+                                </tr>
+                                <tr>
+                                    <td>1000000005</td>
+                                    <td>test1234</td>
+                                    <td>test1234</td>
+                                    <td>통신사 고정 VPN</td>
+                                    <td>2023-02-28 11:26:06~<span class="bold-blue">2023-02-28 11:26:06</span></td>
+                                    <td><span class="bold-blue">6일</span></td>
+                                    <td><span class="bold-blue">156일</span></td>
+                                </tr>
+                                <tr>
+                                    <td>1000000005</td>
+                                    <td>test1234</td>
+                                    <td>test1234</td>
+                                    <td>통신사 고정 VPN</td>
+                                    <td>2023-02-28 11:26:06~<span class="bold-blue">2023-02-28 11:26:06</span></td>
+                                    <td><span class="bold-blue">6일</span></td>
+                                    <td><span class="bold-blue">156일</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="popup-btn-contain popup-btn-contain2">
+                    <div class="popup-btn">
+                        <button type="button" class="pop-red-btn">확인</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>        
+    <script src="/js/menu.js"></script>
+    <script src="/js/select.js"></script>
+    <script src="/js/date.js"></script>
+    <script src="/js/date2.js"></script>
+    <script src="/js/service.js"></script>
+    <script src="/js/more.js"></script>
+</body>
+</html>

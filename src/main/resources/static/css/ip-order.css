@@ -1,0 +1,24 @@
+@import "vpn-order.css";
+.order-table .ip-table thead tr:first-child td:nth-child(5) {
+  width: 7.1875%;
+}
+.order-table .ip-table thead tr:first-child td:nth-child(n+6):nth-child(-n+11) {
+  width: 8.375%;
+}
+.order-table .ip-table tbody td:nth-child(7) {
+  font-weight: 700;
+}
+.order-table .ip-table tbody td:nth-child(8) {
+  color: #589cdf;
+  font-weight: 700;
+}
+.order-table .ip-table tbody td:nth-child(9) {
+  color: #ed1b23;
+  font-weight: 700;
+}
+.order-table .ip-table tbody td:nth-child(10) {
+  color: #508f00;
+}
+.order-table .ip-table tbody td:nth-child(11) {
+  color: #ed1b23;
+}/*# sourceMappingURL=ip-order.css.map */

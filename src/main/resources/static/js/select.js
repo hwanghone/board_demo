@@ -4,7 +4,7 @@ const tableSelect = document.querySelector('.table-select');
 const rotateImg2 = document.querySelector('.rotate-img2');
 const defaltBtn3 = document.querySelector('.defalt3');
 
-defaltBtn3.classList.add('active3');
+// defaltBtn3.classList.add('active3');
 
 // 버튼 및 이미지 클릭 이벤트 핸들러 추가
 tableMainBtn.addEventListener('click', function(event) {

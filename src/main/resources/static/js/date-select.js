@@ -14,6 +14,7 @@ dateButton1.addEventListener('click', () => {
 const closePopup = document.querySelectorAll('.date-btn button');
 
 closePopup.forEach(button => {
+    console.log("close invoke")
     button.addEventListener('click', () => {
         datePopup1.classList.remove('show');
         datePopupWrap.classList.remove('show');

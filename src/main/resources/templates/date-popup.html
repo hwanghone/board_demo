@@ -1,0 +1,83 @@
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<div class="date-popup-wrap" th:fragment="date-popup">
+    <div class="date-year">
+        <button type="button" class="date-left"><img src="/img/date1.png" alt="left arrow"></button>
+        <div class="date-year-select-wrap">
+            <div>
+                <button type="button">2023</button>
+                <p><img src="/img/down.png" class="rotate-img" alt="down arrow"></p>
+            </div>
+            <div>
+                <button type="button">10월</button>
+                <p><img src="/img/down.png" class="rotate-img" alt="down arrow"></p>
+            </div>
+        </div>
+        <button type="button" class="date-right"><img src="/img/date2.png" alt="right arrow"></button>
+    </div>
+    <div class="year year-select">
+        <button type="button">2019</button>
+        <button type="button">2020</button>
+        <button type="button">2021</button>
+        <button type="button">2022</button>
+        <button type="button">2023</button>
+        <button type="button">2024</button>
+    </div>
+    <div class="month month-select">
+        <button th:each="i : ${#numbers.sequence(1,12)}" type="button" th:text="${i + '월'}"></button>
+    </div>
+    <div class="date-table">
+        <ul>
+            <li>일</li>
+            <li>월</li>
+            <li>화</li>
+            <li>수</li>
+            <li>목</li>
+            <li>금</li>
+            <li>토</li>
+        </ul>
+        <ul class="days">
+            <li th:each="i : ${#numbers.sequence(1,31)}" th:text="${i}" class="date-num" onclick="dayPick(this)"></li>
+        </ul>
+    </div>
+    <div class="date-time">
+        <div>
+            <button type="button">13</button>
+            <p><img src="/img/down.png" class="rotate-img" alt="down arrow"></p>
+        </div>
+        <p>시</p>
+        <div>
+            <button type="button">00</button>
+            <p><img src="/img/down.png" class="rotate-img" alt="down arrow"></p>
+        </div>
+        <p>분</p>
+        <div>
+            <button type="button">00</button>
+            <p><img src="/img/down.png" class="rotate-img" alt="down arrow"></p>
+        </div>
+        <p>초</p>
+    </div>
+    <div class="hour">
+        <th:block th:each="i : ${#numbers.sequence(1,24)}">
+            <button th:if="${i &lt; 10}" th:text="${#strings.concat('0', i)}" type="button"></button>
+            <button th:if="${i &gt; 10}" th:text="${i}" type="button"></button>
+        </th:block>
+    </div>
+    <div class="minute">
+        <th:block th:each="i : ${#numbers.sequence(1,60)}">
+            <button th:if="${i &lt; 10}" th:text="${#strings.concat('0', i)}" type="button"></button>
+            <button th:if="${i &gt; 10}" th:text="${i}" type="button"></button>
+        </th:block>
+    </div>
+    <div class="second">
+        <th:block th:each="i : ${#numbers.sequence(1,60)}">
+            <button th:if="${i &lt; 10}" th:text="${#strings.concat('0', i)}" type="button"></button>
+            <button th:if="${i &gt; 10}" th:text="${i}" type="button"></button>
+        </th:block>
+    </div>
+    <div class="date-btn">
+        <button type="button">확인</button>
+        <button type="button">취소</button>
+    </div>
+
+    <script src="/js/date-popup.js"></script>
+</div>
