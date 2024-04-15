@@ -89,8 +89,8 @@
                                         <p>결제일</p>
                                         <div class="date-wrap">
                                             <div class="date-control">
-                                                <input type="number" placeholder="2024-01-01 00:00:00">
-                                                <button type="button" class="date-popup-btn" onclick="datePopup(this)"></button>
+                                                <input type="text" placeholder="2024-01-01 00:00:00">
+                                                <button type="button" class="date-popup-btn" onclick="datePopupOpen(this)"></button>
                                                 <div th:replace="~{date-popup :: date-popup}">
                                             </div>
                                             <p>~</p>

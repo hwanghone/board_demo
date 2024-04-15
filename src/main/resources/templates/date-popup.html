@@ -1,29 +1,28 @@
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <div class="date-popup-wrap" th:fragment="date-popup">
+    <input id="year" type="hidden" value="0">
+    <input id="month" type="hidden" value="0">
+    <input id="day" type="hidden" value="0">
+    <input id="hour" type="hidden" value="0">
+    <input id="minute" type="hidden" value="0">
+    <input id="second" type="hidden" value="0">
     <div class="date-year">
-        <button type="button" class="date-left"><img src="/img/date1.png" alt="left arrow"></button>
+        <button type="button" class="date-left" onclick="dayArrow('left')"><img src="/img/date1.png" alt="left arrow"></button>
         <div class="date-year-select-wrap">
             <div>
-                <button type="button">2023</button>
+                <button class="year-btn" type="button" onclick="selectBoxToggle(this)">2023</button>
                 <p><img src="/img/down.png" class="rotate-img" alt="down arrow"></p>
             </div>
             <div>
-                <button type="button">10월</button>
+                <button class="month-btn" type="button" onclick="selectBoxToggle(this)">10월</button>
                 <p><img src="/img/down.png" class="rotate-img" alt="down arrow"></p>
             </div>
         </div>
-        <button type="button" class="date-right"><img src="/img/date2.png" alt="right arrow"></button>
+        <button type="button" class="date-right" onclick="dayArrow('right')"><img src="/img/date2.png" alt="right arrow"></button>
     </div>
-    <div class="year year-select">
-        <button type="button">2019</button>
-        <button type="button">2020</button>
-        <button type="button">2021</button>
-        <button type="button">2022</button>
-        <button type="button">2023</button>
-        <button type="button">2024</button>
-    </div>
+    <div class="year year-select"></div>
     <div class="month month-select">
-        <button th:each="i : ${#numbers.sequence(1,12)}" type="button" th:text="${i + '월'}"></button>
+        <button class="month-btn" th:each="i : ${#numbers.sequence(1,12)}" type="button" th:text="${i + '월'}" onclick="datePick(this)"></button>
     </div>
     <div class="date-table">
         <ul>
@@ -36,47 +35,47 @@
             <li>토</li>
         </ul>
         <ul class="days">
-            <li th:each="i : ${#numbers.sequence(1,31)}" th:text="${i}" class="date-num" onclick="dayPick(this)"></li>
+            <li th:each="i : ${#numbers.sequence(1,31)}" th:text="${i}" class="date-num" th:value="${i}" onclick="dayPick(this)"></li>
         </ul>
     </div>
     <div class="date-time">
         <div>
-            <button type="button">13</button>
+            <button class="hour-btn" type="button" onclick="selectBoxToggle(this)">00</button>
             <p><img src="/img/down.png" class="rotate-img" alt="down arrow"></p>
         </div>
         <p>시</p>
         <div>
-            <button type="button">00</button>
+            <button class="minute-btn" type="button" onclick="selectBoxToggle(this)">00</button>
             <p><img src="/img/down.png" class="rotate-img" alt="down arrow"></p>
         </div>
         <p>분</p>
         <div>
-            <button type="button">00</button>
+            <button class="second-btn" type="button" onclick="selectBoxToggle(this)">00</button>
             <p><img src="/img/down.png" class="rotate-img" alt="down arrow"></p>
         </div>
         <p>초</p>
     </div>
     <div class="hour">
         <th:block th:each="i : ${#numbers.sequence(1,24)}">
-            <button th:if="${i &lt; 10}" th:text="${#strings.concat('0', i)}" type="button"></button>
-            <button th:if="${i &gt; 10}" th:text="${i}" type="button"></button>
+            <button class="hour-btn" th:if="${i &lt; 10}" th:text="${#strings.concat('0', i)}" type="button" onclick="datePick(this)"></button>
+            <button class="hour-btn" th:if="${i &gt; 10}" th:text="${i}" type="button" onclick="datePick(this)"></button>
         </th:block>
     </div>
     <div class="minute">
         <th:block th:each="i : ${#numbers.sequence(1,60)}">
-            <button th:if="${i &lt; 10}" th:text="${#strings.concat('0', i)}" type="button"></button>
-            <button th:if="${i &gt; 10}" th:text="${i}" type="button"></button>
+            <button class="minute-btn" th:if="${i &lt; 10}" th:text="${#strings.concat('0', i)}" type="button" onclick="datePick(this)"></button>
+            <button class="minute-btn" th:if="${i &gt; 10}" th:text="${i}" type="button" onclick="datePick(this)"></button>
         </th:block>
     </div>
     <div class="second">
         <th:block th:each="i : ${#numbers.sequence(1,60)}">
-            <button th:if="${i &lt; 10}" th:text="${#strings.concat('0', i)}" type="button"></button>
-            <button th:if="${i &gt; 10}" th:text="${i}" type="button"></button>
+            <button class="second-btn" th:if="${i &lt; 10}" th:text="${#strings.concat('0', i)}" type="button" onclick="datePick(this)"></button>
+            <button class="second-btn" th:if="${i &gt; 10}" th:text="${i}" type="button" onclick="datePick(this)"></button>
         </th:block>
     </div>
     <div class="date-btn">
-        <button type="button">확인</button>
-        <button type="button">취소</button>
+        <button type="button" onclick="selectDate()">확인</button>
+        <button type="button" onclick="datePopupCancel(this)">취소</button>
     </div>
 
     <script src="/js/date-popup.js"></script>
