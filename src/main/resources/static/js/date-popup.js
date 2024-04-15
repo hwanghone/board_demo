@@ -1,6 +1,10 @@
+/** 툭정 Element의 텍스트 값 입력 하는 함수 */
 const setText = (selector, v) => document.querySelector(selector).textContent = v;
+
+/** 툭정 Element의 텍스트 출력 하는 함수 (숫자를 제외한 모든 문자 제거 됨) */
 const getValue = (selector) => document.querySelector(selector).textContent.replace(/\D/g, '');
 
+/** date-popup 값 초기화 */
 document.addEventListener('DOMContentLoaded', function() {
     const _currentDate = new Date();
 
@@ -16,13 +20,14 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById("day").value = $day.value;
 });
 
-
+/** popup 영역을 제외한 나머지 영역 클릭 시 팝업 닫힘 */
 document.addEventListener('click', function(event) {
     if (!event.target.closest('.date-popup-wrap')) {
         document.querySelector('.date-popup-wrap').classList.remove('show');
     }
 }, true);
 
+/** 팝업을 열때 연도를 현재 연도 기준 5개까지 버튼 생성 */
 function datePopupOpen(elements) {
     const $yearSelect = document.querySelector('.year.year-select');
     if ($yearSelect.children.length <= 0) {
@@ -40,11 +45,13 @@ function datePopupOpen(elements) {
     elements.nextElementSibling.classList.add('show');
 }
 
+/** 팝업 닫기  */
 function datePopupCancel(elements) {
     const $popup = elements.parentNode.parentNode;
     $popup.classList.remove('show');
 }
 
+/** 팝업의 모든 셀렉트 박스 토글 */
 function selectBoxToggle(elements) {
     const _className = elements.className;
     let _selectClass = _className.replace('-btn', '-select');
@@ -53,6 +60,7 @@ function selectBoxToggle(elements) {
     document.querySelector(`.${_selectClass}`).classList.toggle("show");
 }
 
+/** 날짜에서 일(day)를 제외한 모든 버튼 적용 */
 function datePick(elements) {
     const _value = elements.textContent.replace(/\D/g, '');
     const _className = elements.className.replace('-btn', '');
@@ -66,6 +74,7 @@ function datePick(elements) {
     else $select.classList.remove("show");
 }
 
+/** 일(day)에 대한 입력 값 버튼 적용 */
 function dayPick(elements) {
     const _active = "active2";
     const dateNum = document.querySelectorAll('.date-num');
@@ -78,6 +87,7 @@ function dayPick(elements) {
     })
 }
 
+/** 최종 입력 된 날짜를 포멧에 맞게 input에 출력 */
 function selectDate() {
     const [year, month, day, hour, minute, second] = [
         "year", "month", "day", "hour", "minute", "second"
@@ -91,6 +101,7 @@ function selectDate() {
         .value = formattedDateTime;
 }
 
+/** 회살표 버튼 월 차감/증가 버튼 */
 function dayArrow(direction) {
     let _value = 0;
     if(direction === "left") _value = Number(getValue(".month-btn"))-1;
