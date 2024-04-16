@@ -7,49 +7,49 @@
     <div class="gnb">
         <button id="settings" type="button" class="menu-btn" onclick="menuToggle(this)">환경설정<img src="/img/gnb-down.png" alt="menu arrow"></button>
         <div class="menu">
-            <p><a id="basic" href="basic">기본 환경설정</a></p>
-            <p><a id="manage" href="manage">관리자 관리</a></p>
-            <p><a id="authority" href="authority">관리자 권한 설정</a></p>
-            <p><a id="program" href="program">프로그램 업데이트</a></p>
-            <p><a id="pg" href="pg">PG 설정</a></p>
+            <p><a id="basic" onclick="subMenuClick(this)">기본 환경설정</a></p>
+            <p><a id="manage" onclick="subMenuClick(this)">관리자 관리</a></p>
+            <p><a id="authority" onclick="subMenuClick(this)">관리자 권한 설정</a></p>
+            <p><a id="program" onclick="subMenuClick(this)">프로그램 업데이트</a></p>
+            <p><a id="pg" onclick="subMenuClick(this)">PG 설정</a></p>
         </div>
         <button id="order" type="button" class="menu-btn" onclick="menuToggle(this)">주문관리<img src="/img/gnb-down.png" alt="menu arrow"></button>
         <div class="menu">
-            <p><a id="order-vpn-history" href="order/vpn-history">VPN 서비스 주문 내역</a></p>
-            <p><a id="order-ticket-history" href="order/ticket-history">아이피 교체권 주문 내역</a></p>
-            <p><a id="order-cancel" href="order/cancel">결제 취소 내역</a></p>
-            <p><a id="order-fail" href="order/fail">결제 실패 내역</a></p>
+            <p><a id="order-vpn-history" onclick="subMenuClick(this)">VPN 서비스 주문 내역</a></p>
+            <p><a id="order-ticket-history" onclick="subMenuClick(this)">아이피 교체권 주문 내역</a></p>
+            <p><a id="order-cancel" onclick="subMenuClick(this)">결제 취소 내역</a></p>
+            <p><a id="order-fail" onclick="subMenuClick(this)">결제 실패 내역</a></p>
         </div>
         <button id="service" type="button" class="menu-btn" onclick="menuToggle(this)">서비스 관리<img src="/img/gnb-down.png" alt="menu arrow"></button>
         <div class="menu">
-            <p><a id="service-manage" href="service/manage">VPN 서비스 관리</a></p>
-            <p><a id="service-history" href="service/history">VPN 서비스 변경 내역</a></p>
+            <p><a id="service-manage" onclick="subMenuClick(this)">VPN 서비스 관리</a></p>
+            <p><a id="service-history" onclick="subMenuClick(this)">VPN 서비스 변경 내역</a></p>
         </div>
         <button id="members" type="button" class="menu-btn" onclick="menuToggle(this)">고객 관리<img src="/img/gnb-down.png" alt="menu arrow"></button>
         <div class="menu">
-            <p><a id="member" href="member">회원 관리</a></p>
-            <p><a id="ticket-manage" href="ticket-manage">아이피 교체권 관리</a></p>
-            <p><a id="point" href="point">포인트 관리</a></p>
+            <p><a id="member" onclick="subMenuClick(this)">회원 관리</a></p>
+            <p><a id="ticket-manage" onclick="subMenuClick(this)">아이피 교체권 관리</a></p>
+            <p><a id="point" onclick="subMenuClick(this)">포인트 관리</a></p>
         </div>
-        <p><a id="vpn-log" href="vpn-log" class="menu-btn">VPN 접속 로그</a></p>
-        <button id="state" type="button" class="menu-btn" onclick="menuToggle(this)">VPN 현황<img src="/img/gnb-down.png" alt="menu arrow"></button>
+        <p><a id="vpn-log" class="menu-btn single-menu" onclick="subMenuClick(this)">VPN 접속 로그</a></p>
+        <button id="state" class="menu-btn" onclick="menuToggle(this)">VPN 현황<img src="/img/gnb-down.png" alt="menu arrow"></button>
         <div class="menu">
-            <p><a id="vpn-fix" href="vpn-fix">고정 VPN 현황</a></p>
-            <p><a id="vpn-flow" href="vpn-flow">유동 VPN 현황</a></p>
+            <p><a id="vpn-fix" onclick="subMenuClick(this)">고정 VPN 현황</a></p>
+            <p><a id="vpn-flow" onclick="subMenuClick(this)">유동 VPN 현황</a></p>
         </div>
         <button id="sms" type="button" class="menu-btn" onclick="menuToggle(this)">SMS 관리<img src="/img/gnb-down.png" alt="menu arrow"></button>
         <div class="menu">
-            <p><a id="sms-setting" href="sms-setting">SMS 설정</a></p>
-            <p><a id="sms-send" href="sms-send">SMS 발송</a></p>
-            <p><a id="sms-history" href="sms-history">SMS 발송 내역</a></p>
+            <p><a id="sms-setting" onclick="subMenuClick(this)">SMS 설정</a></p>
+            <p><a id="sms-send" onclick="subMenuClick(this)">SMS 발송</a></p>
+            <p><a id="sms-history" onclick="subMenuClick(this)">SMS 발송 내역</a></p>
         </div>
         <button id="center" type="button" class="menu-btn" onclick="menuToggle(this)">고객센터<img src="/img/gnb-down.png" alt="menu arrow"></button>
         <div class="menu">
-            <p><a id="notice" href="notice">공지사항</a></p>
-            <p><a id="inquiry" href="inquiry">1:1문의</a></p>
-            <p><a id="faq" href="faq">FAQ</a></p>
+            <p><a id="notice" onclick="subMenuClick(this)">공지사항</a></p>
+            <p><a id="inquiry" onclick="subMenuClick(this)">1:1문의</a></p>
+            <p><a id="faq" onclick="subMenuClick(this)">FAQ</a></p>
         </div>
-        <p><a id="sales" href="sales" class="menu-btn">매출 통계</a></p>
+        <p><a id="sales" class="menu-btn single-menu" onclick="subMenuClick(this)">매출 통계</a></p>
     </div>
     <script src="/js/header.js"></script>
 </header>

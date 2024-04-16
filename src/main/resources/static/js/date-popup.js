@@ -1,8 +1,8 @@
 /** 툭정 Element의 텍스트 값 입력 하는 함수 */
-const setText = (selector, v) => document.querySelector(selector).textContent = v;
+const setText = (s, v) => document.querySelector(s).textContent = v;
 
 /** 툭정 Element의 텍스트 출력 하는 함수 (숫자를 제외한 모든 문자 제거 됨) */
-const getValue = (selector) => document.querySelector(selector).textContent.replace(/\D/g, '');
+const getValue = (s) => document.querySelector(s).textContent.replace(/\D/g, '');
 
 /** date-popup 값 초기화 */
 document.addEventListener('DOMContentLoaded', function() {
@@ -29,7 +29,17 @@ document.addEventListener('click', function(event) {
 
 /** 팝업을 열때 연도를 현재 연도 기준 5개까지 버튼 생성 */
 function datePopupOpen(elements) {
+    const $wrapper = elements.previousElementSibling;
+    const $popup = elements.nextElementSibling;
     const $yearSelect = document.querySelector('.year.year-select');
+    const $monthSelect = document.querySelector('.month.year-select');
+    if ($wrapper.value) {
+        console.log("$wrapper.value 있음")
+    } else {
+        console.log("$wrapper.value 없음")
+    }
+
+
     if ($yearSelect.children.length <= 0) {
         const _currentYear = new Date().getFullYear();
         for (let i=_currentYear-4; i<=_currentYear; i++) {
@@ -87,7 +97,7 @@ function dayPick(elements) {
     })
 }
 
-/** 최종 입력 된 날짜를 포멧에 맞게 input에 출력 */
+/** 최종 입력 된 날짜를 format에 맞게 input에 출력 후 팝업 닫기 */
 function selectDate() {
     const [year, month, day, hour, minute, second] = [
         "year", "month", "day", "hour", "minute", "second"
@@ -99,6 +109,7 @@ function selectDate() {
         .previousElementSibling
         .previousElementSibling
         .value = formattedDateTime;
+    document.querySelector('.date-popup-wrap').classList.remove("show")
 }
 
 /** 회살표 버튼 월 차감/증가 버튼 */
